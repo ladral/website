@@ -1,0 +1,16 @@
+{
+  "name": "ladral-website",
+  "version": "0.1.0",
+  "description": "Ladral Website",
+  "scripts": {
+    "dev": "rimraf dist && parcel src/index.html",
+    "build": "rimraf .parcel-cache dist && parcel build src/index.html --no-source-maps"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2",
+    "parcel": "^2.6.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2"
+  }
+}
