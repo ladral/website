@@ -1,4 +1,37 @@
-.illustration__logo {
+@use "../../abstracts" as *;
+
+.illustration__container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.illustration__company-logo-container {
+  position: relative;
+}
+
+.illustration__company-logo {
+  position: relative;
+  z-index: 5;
+}
+
+.illustration__company-name {
+  position: absolute;
+  bottom: 7rem;
+  right: 2.7rem;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 4.5rem;
+  color: $text-color-on-background;
+
+  &::before {
+    position: relative;
+    content: "ladr";
+    z-index: 1;
+  }
+
+  &::after {
+    content: "al";
+    position: relative;
+    z-index: 10;
+  }
 }
