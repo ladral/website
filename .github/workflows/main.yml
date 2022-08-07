@@ -9,6 +9,5 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v4
         with:
-          build: npm run build
           start: npm run start:ci
           wait-on: "http://localhost:1234"

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "rimraf dist && parcel src/index.html",
     "build": "rimraf .parcel-cache dist && parcel build src/index.html --no-source-maps",
-    "start:ci": "npx http-server dist --port 1234",
+    "start:ci": "npm run build & npx http-server dist --port 1234",
     "test:e2e": "cypress run",
     "cypress:open": "cypress open"
   },
