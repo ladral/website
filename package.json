@@ -4,15 +4,20 @@
   "description": "Ladral Website",
   "scripts": {
     "dev": "rimraf dist && parcel src/index.html",
-    "build": "rimraf .parcel-cache dist && parcel build src/index.html --no-source-maps"
+    "build": "rimraf .parcel-cache dist && parcel build src/index.html --no-source-maps",
+    "start:ci": "npm run build & npx http-server dist --port 1234",
+    "test:e2e": "cypress run",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "parcel": "^2.6.2",
-    "rimraf": "^3.0.2"
-  },
-  "devDependencies": {
+    "rimraf": "^3.0.2",
     "@parcel/packager-raw-url": "^2.6.2",
     "@parcel/transformer-sass": "^2.6.2",
     "@parcel/transformer-webmanifest": "^2.6.2"
+  },
+  "devDependencies": {
+    "cypress": "^10.4.0",
+    "http-server": "^14.1.1"
   }
 }

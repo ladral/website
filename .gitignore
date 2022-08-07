@@ -45,3 +45,8 @@ dist/
 
 # IDE
 /.idea/
+
+#cypress io
+/test/cypress/videos/
+/test/cypress/screenshots/
+/test/cypress/downloads/
