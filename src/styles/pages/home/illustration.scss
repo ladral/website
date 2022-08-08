@@ -22,6 +22,33 @@
   }
 }
 
+@keyframes illustration__gradient-stop-animation-show {
+  0% {
+    stop-opacity: 0;
+  }
+  100% {
+    stop-opacity: 1;
+  }
+}
+
+@mixin -illustration__gradient-stop-animation-show($delay) {
+  animation: illustration__gradient-stop-animation-show 2s ease-in-out $delay both;
+}
+
+.project-icon__gradient-stop {
+  stop-opacity: 0;
+
+  &--first {
+    @include -illustration__gradient-stop-animation-show(1s);
+  }
+  &--second {
+    @include -illustration__gradient-stop-animation-show(1.5s);
+  }
+  &--third {
+    @include -illustration__gradient-stop-animation-show(2s);
+  }
+}
+
 .illustration__project-name {
   position: absolute;
   bottom: 7rem;
