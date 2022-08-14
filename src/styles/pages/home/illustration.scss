@@ -61,6 +61,7 @@
   border-radius: 12px;
   right: 210px;
   margin-top: 5.7rem;
+  z-index:-2;
 
   animation: illustration__snowfall-animation-short 3s ease-in 2s infinite;
   animation-fill-mode: both;
