@@ -20,6 +20,18 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
   left: 0;
   right: 0;
   bottom: 0;
+
+  animation: illustration__snowfall-animation-show 3s both ease-in $-illustration__snowfall-animation-Delay;
+}
+
+@keyframes illustration__snowfall-animation-show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .illustration__snowfall-cloud {
