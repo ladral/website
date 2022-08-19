@@ -1,0 +1,263 @@
+@use "../../abstracts" as *;
+
+$-illustration__snowfall-animation-Delay: 2s;
+$-illustration__snowfall-flake-Width: 0.375rem;
+$-illustration__snowfall-flake--large-Width: 0.5rem;
+
+.illustration__container {
+  @include make-container();
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.illustration__snowfall {
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  animation: illustration__snowfall-animation-show 3s both ease-in $-illustration__snowfall-animation-Delay;
+}
+
+@keyframes illustration__snowfall-animation-show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.illustration__snowfall-cloud {
+  height: 7rem;
+  width: 7rem;
+  margin-right: 1rem;
+  border-radius: 9rem 9rem 0 0;
+  position: relative;
+
+  &, &:before, &:after {
+    box-shadow: inset 1.25rem 0.625rem 2.5rem -2rem rgba(0, 0, 0, 0.75);
+    background: $text-color-on-background;
+  }
+
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &:before {
+    height: 4.25rem;
+    width: 4.25rem;
+    border-radius: 9rem 9rem 0 9rem;
+    left: -2.5rem;
+  }
+
+  &:after {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 9rem 9rem 9rem 0;
+    right: -3.5rem;
+    z-index: -1;
+  }
+}
+
+.illustration__snowfall-flake {
+  position: absolute;
+  width: $-illustration__snowfall-flake-Width;
+  height: $-illustration__snowfall-flake-Width;
+  background: $text-color-on-background;
+  border-radius: $-illustration__snowfall-flake--large-Width * 2;
+  margin-top: 5.6rem;
+  z-index: -2;
+
+  animation-name: illustration__snowfall-animation-short;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-delay: $-illustration__snowfall-animation-Delay;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+
+  @media (max-width: $breakpoint-xs) {
+    animation-name: illustration__snowfall-animation-long;
+    animation-duration: 3.5s;
+  }
+
+  &:nth-child(even) {
+    top: 0.625rem;
+    left: -0.125rem;
+    width: $-illustration__snowfall-flake--large-Width;
+    height: $-illustration__snowfall-flake--large-Width;
+    border-radius: 2.5rem;
+    animation-delay: $-illustration__snowfall-animation-Delay + 1s !important;
+  }
+
+  &:nth-child(3n - 1) {
+    top: 0;
+    left: 1.25rem;
+    animation-delay: $-illustration__snowfall-animation-Delay + 2s !important;
+  }
+
+  &:nth-child(3n + 1) {
+    left: 0;
+    top: -0.625rem;
+    animation-delay: $-illustration__snowfall-animation-Delay + 3.25s !important;
+  }
+
+  &:nth-child(4n - 1) {
+    left: 6.9rem;
+    top: -1.9rem;
+    animation-delay: $-illustration__snowfall-animation-Delay + 2.75s !important;
+  }
+
+  &:nth-child(4n + 1) {
+    left: 2.8rem;
+    top: 1rem;
+    animation-delay: $-illustration__snowfall-animation-Delay + 1.5s !important;
+  }
+
+  &:nth-child(5n - 1) {
+    left: 6rem;
+    top: -2.5rem;
+  }
+
+  &:nth-child(5n + 1) {
+    left: 4rem;
+    top: 0.625rem;
+    animation-delay: $-illustration__snowfall-animation-Delay + 2.25s !important;
+  }
+
+  &:nth-child(6n + 1) {
+    left: 2.3rem;
+    top: -4rem;
+    animation-delay: $-illustration__snowfall-animation-Delay + 1.25s !important
+  }
+}
+
+@keyframes illustration__snowfall-animation-short {
+  60% {
+    opacity: 1;
+    margin-left: 2.9rem;
+  }
+
+  100% {
+    opacity: 0;
+    margin-top: 18rem;
+  }
+}
+
+@keyframes illustration__snowfall-animation-long {
+  60% {
+    opacity: 1;
+    margin-left: 2.9rem;
+  }
+
+  100% {
+    opacity: 0;
+    margin-top: 26.4rem;
+  }
+}
+
+.illustration__project-logo {
+  --_illustration__project-logo-Width:
+          var(--illustration__project-logo-Width,
+                  var(--__illustration__project-logo-Width, 25rem)
+          );
+  --_illustration__project-logo-Height:
+          var(--illustration__project-logo-Height,
+                  var(--__illustration__project-logo-Height, 25rem)
+  );
+  --__illustration__project-name-FontSize: calc(var(--_illustration__project-logo-Height) / 6);
+
+  width: var(--_illustration__project-logo-Width);
+  height: var(--_illustration__project-logo-Height);
+  position: relative;
+  margin-top: 5rem;
+
+  @media (max-width: $breakpoint-xs) {
+    margin-top: 15rem;
+    --__illustration__project-logo-Width: 18rem;
+    --__illustration__project-logo-Height: 18rem;
+  }
+}
+
+.illustration__project-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+@mixin -illustration__gradient-stop-animation-show($delay) {
+  animation: illustration__gradient-stop-animation-show 2s ease-in-out $delay both;
+
+  @keyframes illustration__gradient-stop-animation-show {
+    0% {
+      stop-opacity: 0;
+    }
+    100% {
+      stop-opacity: 1;
+    }
+  }
+}
+
+.project-icon__gradient-stop {
+  stop-opacity: 0;
+
+  &--first {
+    @include -illustration__gradient-stop-animation-show(1.2s);
+  }
+
+  &--second {
+    @include -illustration__gradient-stop-animation-show(1.7s);
+  }
+
+  &--third {
+    @include -illustration__gradient-stop-animation-show(2.2s);
+  }
+}
+
+.illustration__project-name {
+  --_illustration__project-name-FontSize:
+          var(--illustration__project-name-FontSize,
+                  var(--__illustration__project-name-FontSize, 4.2em));
+
+  position: absolute;
+  bottom: 20%;
+  right: 7.7%;
+  display: flex;
+  font-family: "Fjalla One", sans-serif;
+  font-size: var(--_illustration__project-name-FontSize);
+  color: $text-color-on-background;
+}
+
+.illustration__project-name-letter {
+  animation: illustration__project-name-animation-show 2s both;
+  animation-delay: calc(.2s * var(--i));
+
+  &--back {
+    position: relative;
+    z-index: 1;
+  }
+
+  &--front {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+@keyframes illustration__project-name-animation-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
