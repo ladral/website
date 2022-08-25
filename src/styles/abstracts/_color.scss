@@ -1,0 +1,12 @@
+$background-color-primary: rgba(0, 0, 0, 1)!default;
+$text-color-on-background: rgba(255, 255, 255, 1)!default;
+$color-primary: rgb(242, 2, 242)!default;
+$color-secondary: rgb(0, 255, 255)!default;
+
+:root {
+  /* Colors: Primary */
+  --color-primary: $color-primary;
+
+  /* Colors: Black */
+  --color-black: rgba(0, 0, 0, 1)
+}

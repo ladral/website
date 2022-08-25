@@ -1,25 +1,2 @@
-$color-background: rgba(0, 0, 0, 1)!default;
-$text-color-on-background: rgba(255, 255, 255, 1)!default;
-$color-primary: rgb(242, 2, 242)!default;
-$color-secondary: rgb(0, 255, 255)!default;
-
 $container-width: 75rem!default;
 $container-padding-horizontal: 2rem!default;
-
-/** Breakpoints **/
-$breakpoint-lg: 75em!default;
-$breakpoint-md: 62em!default;
-$breakpoint-sm: 48em!default;
-$breakpoint-xs: 36em!default;
-$breakpoint-xxs: 25em!default;
-
-/** 1200px and smaller */
-@media (max-width: $breakpoint-lg) {}
-/** 992px or smaller */
-@media (max-width: $breakpoint-md) {}
-/** 768px or smaller */
-@media (max-width: $breakpoint-sm) {}
-/** 576px or smaller */
-@media (max-width: $breakpoint-xs) {}
-/** 400px or smaller */
-@media (max-width: $breakpoint-xxs) {}
