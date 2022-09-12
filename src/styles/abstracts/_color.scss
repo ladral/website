@@ -1,12 +1,18 @@
-$background-color-primary: rgba(0, 0, 0, 1)!default;
-$text-color-on-background: rgba(255, 255, 255, 1)!default;
-$color-primary: rgb(242, 2, 242)!default;
-$color-secondary: rgb(0, 255, 255)!default;
+@use "variables" as variables;
 
 :root {
   /* Colors: Primary */
-  --color-primary: $color-primary;
+  --color-primary: #{variables.$color-primary};
+  --color-secondary: #{variables.$color-secondary};
 
   /* Colors: Black */
-  --color-black: rgba(0, 0, 0, 1)
+  --color-black: rgba(0, 0, 0, 1);
+
+  /* Colors: Gray */
+  --color-gray-700: rgb(55, 65, 81);
+  --color-gray-800: rgb(31, 41, 55);
+  --color-gray-900: rgb(17, 24, 39);
+
+  /* Colors: Text */
+  --color-text-light: rgb(230, 236, 245);
 }

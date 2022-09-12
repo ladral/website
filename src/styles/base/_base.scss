@@ -6,8 +6,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dral-bg-color: var(--color-gray-900, black);
+  --dral-on-bg-color: var(--color-text-light, white);
+}
+
 html {
   font-size: 100%;
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--color-black, black);
+  background-color: var(--dral-bg-color);
+  color: var(--dral-on-bg-color);
 }
