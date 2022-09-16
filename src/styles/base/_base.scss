@@ -7,8 +7,8 @@
 }
 
 :root {
-  --dral-bg-color: var(--color-gray-900, black);
-  --dral-on-bg-color: var(--color-text-light, white);
+  --lad-bg-color: var(--color-gray-900, black);
+  --lad-on-bg-color: var(--color-text-light, white);
 }
 
 html,
@@ -25,6 +25,6 @@ textarea{
   font-size: 100%;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  background-color: var(--dral-bg-color);
-  color: var(--dral-on-bg-color);
+  background-color: var(--lad-bg-color);
+  color: var(--lad-on-bg-color);
 }

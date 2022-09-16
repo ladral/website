@@ -43,7 +43,7 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
 
   &, &:before, &:after {
     box-shadow: inset 1.25rem 0.625rem 2.5rem -2rem rgba(0, 0, 0, 0.75);
-    background: var(--dral-on-bg-color);
+    background: var(--lad-on-bg-color);
   }
 
   &:before, &:after {
@@ -73,7 +73,7 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
   position: absolute;
   width: $-illustration__snowfall-flake-Width;
   height: $-illustration__snowfall-flake-Width;
-  background: var(--dral-on-bg-color);
+  background: var(--lad-on-bg-color);
   border-radius: $-illustration__snowfall-flake--large-Width * 2;
   margin-top: 5.6rem;
   z-index: -2;
@@ -235,7 +235,7 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
   display: flex;
   font-family: "Fjalla One", sans-serif;
   font-size: var(--_illustration__project-name-FontSize);
-  color: var(--dral-on-bg-color);
+  color: var(--lad-on-bg-color);
 }
 
 .illustration__project-name-letter {
