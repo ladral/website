@@ -11,9 +11,20 @@
   --dral-on-bg-color: var(--color-text-light, white);
 }
 
-html {
+html,
+body {
+  height: 100%;
+}
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea{
   font-size: 100%;
   font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   background-color: var(--dral-bg-color);
   color: var(--dral-on-bg-color);
 }
