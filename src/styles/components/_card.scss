@@ -1,0 +1,30 @@
+.lad-card {
+  --_lad_card-Color: var(--lad-card-Color, var(--color-text-light));
+  --_lad-card-BackgroundColor: var(--lad-card-BackgroundColor, var(--color-gray-700));
+  --_lad-card-BorderRadius: var(--lad-card-BorderRadius, 0.5rem 0.5rem);
+  --_lad-card-BoxShadow: var(--lad-card-BoxShadow, inset 0 1px 0 0 var(--color-gray-600));
+  --_lad-card-Height: var(--lad-card-Height, 25rem);
+  --_lad-card-Width: var(--lad-card-Width, 16rem);
+  --_lad-card-Padding: var(--lad-card-Padding, 1.5rem);
+
+  color: var(--_lad_card-Color);
+  background-color: var(--_lad-card-BackgroundColor);
+  border-radius: var(--_lad-card-BorderRadius);
+  box-shadow: var(--_lad-card-BoxShadow);
+  padding: var(--_lad-card-Padding);
+  width: var(--_lad-card-Width);
+  height: var(--_lad-card-Height);
+
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+
+    --_lad-card-BoxShadow--hover:
+            inset 0 1px 0 0 var(--color-gray-600),
+            0 2px 3px var(--color-gray-900),
+            0 8px 8px var(--color-gray-900);
+
+    --_lad-card-BoxShadow: var(--lad-card-BoxShadow--hover, var(--_lad-card-BoxShadow--hover));
+  }
+}
