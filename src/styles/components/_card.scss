@@ -1,32 +1,32 @@
 @use "../abstracts/functions" as fx;
 
-.lad-card {
-  --_lad_card-Color: var(--lad-card-Color, #{fx.getOnColor(grey, 700)});
-  --_lad-card-BackgroundColor: var(--lad-card-BackgroundColor, #{fx.getColor(grey, 700)});
-  --_lad-card-BorderRadius: var(--lad-card-BorderRadius, 0.5rem 0.5rem);
-  --_lad-card-BoxShadow: var(--lad-card-BoxShadow, inset 0 1px 0 0 #{fx.getColor(grey, 600)});
-  --_lad-card-Height: var(--lad-card-Height, 25rem);
-  --_lad-card-Width: var(--lad-card-Width, 16rem);
-  --_lad-card-Padding: var(--lad-card-Padding, 1.5rem);
+.dral-card {
+  --_dral_card-Color: var(--dral-card-Color, #{fx.getOnColor(grey, 700)});
+  --_dral-card-BackgroundColor: var(--dral-card-BackgroundColor, #{fx.getColor(grey, 700)});
+  --_dral-card-BorderRadius: var(--dral-card-BorderRadius, 0.5rem 0.5rem);
+  --_dral-card-BoxShadow: var(--dral-card-BoxShadow, inset 0 1px 0 0 #{fx.getColor(grey, 600)});
+  --_dral-card-Height: var(--dral-card-Height, 25rem);
+  --_dral-card-Width: var(--dral-card-Width, 16rem);
+  --_dral-card-Padding: var(--dral-card-Padding, 1.5rem);
 
-  color: var(--_lad_card-Color);
-  background-color: var(--_lad-card-BackgroundColor);
-  border-radius: var(--_lad-card-BorderRadius);
-  box-shadow: var(--_lad-card-BoxShadow);
-  padding: var(--_lad-card-Padding);
-  width: var(--_lad-card-Width);
-  height: var(--_lad-card-Height);
+  color: var(--_dral_card-Color);
+  background-color: var(--_dral-card-BackgroundColor);
+  border-radius: var(--_dral-card-BorderRadius);
+  box-shadow: var(--_dral-card-BoxShadow);
+  padding: var(--_dral-card-Padding);
+  width: var(--_dral-card-Width);
+  height: var(--_dral-card-Height);
 
   overflow: hidden;
 
   &:hover {
     cursor: pointer;
 
-    --_lad-card-BoxShadow--hover:
+    --_dral-card-BoxShadow--hover:
             inset 0 1px 0 0 #{fx.getColor(grey, 600)},
             0 2px 3px #{fx.getColor(grey, 900)},
             0 8px 8px #{fx.getColor(grey, 900)};
 
-    --_lad-card-BoxShadow: var(--lad-card-BoxShadow--hover, var(--_lad-card-BoxShadow--hover));
+    --_dral-card-BoxShadow: var(--dral-card-BoxShadow--hover, var(--_dral-card-BoxShadow--hover));
   }
 }
