@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "./variables" as var;
+
+//
+//  @return var(--color-grey-800, rgb(17, 24, 39);
+//
+@function getColor($name: grey, $step: 800) {
+    $color: var(--color-#{$name}-#{$step}, #{map-get-strict(var.$COLOR-MAPS, $name, $step, 'light')});
+    @return $color;
+}
+
+@function getOnColor($name: grey, $step: 800) {
+  $color: var(--color-on-#{$name}-#{$step}, #{map-get-strict(var.$COLOR-MAPS, $name, $step, 'on-light')});
+  @return $color;
+}
+
+@function map-get-strict($map, $name, $step, $theme) {
+  @if map-has-key($map, $name, $step, $theme) {
+    @return map-get($map, $name, $step, $theme);
+  } @else {
+    @error "ERROR: Specified key does not exist in the color mapping";
+  }
+}

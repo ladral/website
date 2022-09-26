@@ -1,7 +1,47 @@
 /* Color Defaults */
-$color-primary: rgb(242, 2, 242)!default;
-$color-secondary: rgb(0, 255, 255)!default;
+$color-primary: rgb(242, 2, 242) !default;
+$color-secondary: rgb(0, 255, 255) !default;
+$color-text-light: rgb(230, 236, 245) !default;
+
+$COLOR-MAPS: (
+        primary: (
+                800: (
+                        light: $color-primary,
+                        on-light: $color-text-light
+                )
+        ),
+        secondary: (
+                800: (
+                        light: $color-secondary,
+                        on-light: $color-text-light
+                )
+        ),
+        black: (
+                800: (
+                        light: black,
+                        on-light: $color-text-light
+                )
+        ),
+        grey: (
+                900: (
+                        light: rgb(13, 18, 28),
+                        on-light: $color-text-light
+                ),
+                800: (
+                        light: rgb(17, 24, 39),
+                        on-light: $color-text-light
+                ),
+                700: (
+                        light: rgb(31, 41, 55),
+                        on-light: $color-text-light
+                ),
+                600: (
+                        light: rgb(55, 65, 81),
+                        on-light: $color-text-light
+                )
+        )
+);
 
 /* Container */
-$container-width: 75rem!default;
-$container-padding-horizontal: 2rem!default;
+$container-width: 75rem !default;
+$container-padding-horizontal: 2rem !default;

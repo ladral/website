@@ -1,10 +1,11 @@
-@use "../../abstracts" as *;
+@use "../../abstracts/functions" as fx;
+@use "../../abstracts/mixins" as mixins;
 
 .projects {
   padding: 3rem 0;
-  background-color: var(--color-gray-800);
+  background-color: #{fx.getColor(grey, 800)};
 }
 
 .projects__container {
-  @include make-container();
+  @include mixins.make-container();
 }

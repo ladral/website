@@ -1,11 +1,12 @@
-@use "../../abstracts" as *;
+@use "../../abstracts/mixins" as mixins;
+@use "../../abstracts/size" as size;
 
 $-illustration__snowfall-animation-Delay: 2s;
 $-illustration__snowfall-flake-Width: 0.375rem;
 $-illustration__snowfall-flake--large-Width: 0.5rem;
 
 .illustration__container {
-  @include make-container();
+  @include mixins.make-container();
 
   display: flex;
   flex-direction: column;
@@ -85,7 +86,7 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
 
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: size.$breakpoint-xs) {
     animation-name: illustration__snowfall-animation-long;
     animation-duration: 3.5s;
   }
@@ -181,7 +182,7 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
   position: relative;
   margin-top: 5rem;
 
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: size.$breakpoint-xs) {
     margin-top: 15rem;
     --__illustration__project-logo-Width: 18rem;
     --__illustration__project-logo-Height: 18rem;
