@@ -1,25 +1,47 @@
-$color-background: rgba(0, 0, 0, 1)!default;
-$text-color-on-background: rgba(255, 255, 255, 1)!default;
-$color-primary: rgb(242, 2, 242)!default;
-$color-secondary: rgb(0, 255, 255)!default;
+/* Color Defaults */
+$color-primary: rgb(242, 2, 242) !default;
+$color-secondary: rgb(0, 255, 255) !default;
+$color-text-light: rgb(230, 236, 245) !default;
 
-$container-width: 75rem!default;
-$container-padding-horizontal: 2rem!default;
+$COLOR-MAPS: (
+        primary: (
+                800: (
+                        light: $color-primary,
+                        on-light: $color-text-light
+                )
+        ),
+        secondary: (
+                800: (
+                        light: $color-secondary,
+                        on-light: $color-text-light
+                )
+        ),
+        black: (
+                800: (
+                        light: black,
+                        on-light: $color-text-light
+                )
+        ),
+        grey: (
+                900: (
+                        light: rgb(13, 18, 28),
+                        on-light: $color-text-light
+                ),
+                800: (
+                        light: rgb(17, 24, 39),
+                        on-light: $color-text-light
+                ),
+                700: (
+                        light: rgb(31, 41, 55),
+                        on-light: $color-text-light
+                ),
+                600: (
+                        light: rgb(55, 65, 81),
+                        on-light: $color-text-light
+                )
+        )
+);
 
-/** Breakpoints **/
-$breakpoint-lg: 75em!default;
-$breakpoint-md: 62em!default;
-$breakpoint-sm: 48em!default;
-$breakpoint-xs: 36em!default;
-$breakpoint-xxs: 25em!default;
-
-/** 1200px and smaller */
-@media (max-width: $breakpoint-lg) {}
-/** 992px or smaller */
-@media (max-width: $breakpoint-md) {}
-/** 768px or smaller */
-@media (max-width: $breakpoint-sm) {}
-/** 576px or smaller */
-@media (max-width: $breakpoint-xs) {}
-/** 400px or smaller */
-@media (max-width: $breakpoint-xxs) {}
+/* Container */
+$container-width: 75rem !default;
+$container-padding-horizontal: 2rem !default;
