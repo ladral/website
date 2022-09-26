@@ -5,8 +5,8 @@
   --_dral-card-BackgroundColor: var(--dral-card-BackgroundColor, #{fx.getColor(grey, 700)});
   --_dral-card-BorderRadius: var(--dral-card-BorderRadius, 0.5rem 0.5rem);
   --_dral-card-BoxShadow: var(--dral-card-BoxShadow, inset 0 1px 0 0 #{fx.getColor(grey, 600)});
-  --_dral-card-Height: var(--dral-card-Height, 25rem);
-  --_dral-card-Width: var(--dral-card-Width, 16rem);
+  --_dral-card-MinHeight: var(--dral-card-MinHeight, 1rem);
+  --_dral-card-MinWidth: var(--dral-card-MinWidth, 16rem);
   --_dral-card-Padding: var(--dral-card-Padding, 1.5rem);
 
   color: var(--_dral_card-Color);
@@ -14,9 +14,12 @@
   border-radius: var(--_dral-card-BorderRadius);
   box-shadow: var(--_dral-card-BoxShadow);
   padding: var(--_dral-card-Padding);
-  width: var(--_dral-card-Width);
-  height: var(--_dral-card-Height);
+  min-width: var(--_dral-card-MinWidth);
+  min-height: var(--_dral-card-MinHeight);
 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   overflow: hidden;
 
   &:hover {

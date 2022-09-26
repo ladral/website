@@ -9,3 +9,8 @@
 .projects__container {
   @include mixins.make-container();
 }
+
+.projects__timeline-indication {
+  margin: 1.5rem 0;
+  color: fx.getOnColor(grey, 800);
+}
