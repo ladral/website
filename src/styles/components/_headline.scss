@@ -1,0 +1,32 @@
+@use "../abstracts/functions" as fx;
+
+.headline {
+  --_headline-Margin: var(--headline-Margin, 1rem 0 1rem 0);
+
+  margin: var(--_headline-Margin);
+}
+
+.headline__text {
+  --_headline__text-Opacity: var(--headline__text-Opacity, 1);
+
+  opacity: var(--_headline__text-Opacity);
+}
+
+.headline__underscore {
+  --_headline__underscoore-Width: var(--headline__underscore-Width, 100%);
+
+  width: var(--_headline__underscoore-Width);
+  background-color: fx.getOnColor(grey, 800);
+  display: inline-block;
+  height: 2px;
+  margin: 0.8em 0;
+}
+
+.headline--animated {
+  /* this variation of the component is animated using motion one JavaScript library -> see motion.mjs */
+
+  /* opacity will be animated to 1 as soon projects headline is visible */
+  --headline__text-Opacity: 0;
+  /* width will be animated to 100% as soon headline text has been animated */
+  --headline__underscore-Width: 0;
+}

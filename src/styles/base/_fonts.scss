@@ -84,15 +84,3 @@
   line-height: 3rem;
   font-weight: 700;
 }
-
-/* Headline */
-.headline {
-  &::after {
-    content: '';
-    background-color: var(--color-text-light, white);
-    display: block;
-    height: 2px;
-    margin: 0.4em 0 0.8em 0;
-    width: 100%;
-  }
-}
