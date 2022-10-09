@@ -8,7 +8,9 @@
 
 .headline__text {
   --_headline__text-Opacity: var(--headline__text-Opacity, 1);
+  --_headline__text-ClipPath: var(--headline__text-ClipPath, none);
 
+  clip-path: var(--_headline__text-ClipPath);
   opacity: var(--_headline__text-Opacity);
 }
 
@@ -25,8 +27,10 @@
 .headline--animated {
   /* this variation of the component is animated using motion one JavaScript library -> see motion.mjs */
 
-  /* opacity will be animated to 1 as soon projects headline is visible */
+  /* headline text opacity and clip-path will be animated as soon projects headline is visible */
   --headline__text-Opacity: 0;
-  /* width will be animated to 100% as soon headline text has been animated */
+  --headline__text-ClipPath: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+
+  /* headline underscore width will be animated to 100% as soon headline text has been animated */
   --headline__underscore-Width: 0;
 }
