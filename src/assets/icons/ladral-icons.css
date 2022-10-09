@@ -1,0 +1,76 @@
+/*
+    LADRAL ICONS
+    Collection of ladral icons using Remix library
+ */
+
+/*
+* https://remixicon.com
+* https://github.com/Remix-Design/RemixIcon
+* Copyright RemixIcon.com
+* Released under the Apache License Version 2.0
+*/
+
+/*
+    ICON SOURCES
+    Here are linked the font files. Mostly you don't need to update this.
+    In some rare cases a browser tries to load an older (cached) version of the font files,
+    to prevent this please add an updated timestamp (https://timestampgenerator.com) as '^Version', see the 't' parameter.
+ */
+
+@font-face {
+    font-family: "remixicon";
+    src: url('remixicon/remixicon.eot?t=1665344043153'); /* IE9*/
+    src: url('remixicon/remixicon.eot?t=1665344043153#iefix') format('embedded-opentype'), /* IE6-IE8 */ url("remixicon/remixicon.woff2?t=1665344043153") format("woff2"),
+    url("remixicon/remixicon.woff?t=1665344043153") format("woff"),
+    url('remixicon/remixicon.ttf?t=1665344043153') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('remixicon/remixicon.svg?t=1665344043153#remixicon') format('svg'); /* iOS 4.1- */
+    font-display: swap;
+}
+
+[class^="dral-icon-"],
+[class*="dral-icon-"] {
+    font-family: "remixicon" !important;
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1rem;
+    text-align: center;
+
+    /* For safety - reset parent styles, that can break glyph codes */
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height. for twitter bootstrap */
+    line-height: 1em;
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+    ICON MAPPING
+    If you need to update icons, this is your section.
+    The comment above the icon style is a reference to the original naming, for easier mapping.
+ */
+
+/* .ri-arrow-down-s-line:before { content: "\ea4e"; } */
+.dral-icon-arrow-down:before {
+    content: "\ea4e";
+}
+
+/* .ri-arrow-up-s-line:before { content: "\ea78"; } */
+.dral-icon-arrow-up:before {
+    content: "\ea78";
+}
+
+/*.ri-arrow-right-s-line:before { content: "\ea6e"; }*/
+.dral-icon-arrow-right:before {
+    content: "\ea6e";
+}
+
+/*.ri-arrow-left-s-line:before { content: "\ea64"; }*/
+.dral-icon-arrow-left:before {
+    content: "\ea64";
+}
