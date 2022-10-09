@@ -9,7 +9,13 @@
 .headline__text {
   --_headline__text-Opacity: var(--headline__text-Opacity, 1);
   --_headline__text-ClipPath: var(--headline__text-ClipPath, none);
+  --_headline__text-FontSize: inherit;
+  --_headline__text-FontWeight: inherit;
+  --_headline__text-LineHeight: inherit;
 
+  font-size: var(--_headline__text-FontSize);
+  font-weight: var(--_headline__text-FontWeight);
+  line-height: var(--_headline__text-LineHeight);
   clip-path: var(--_headline__text-ClipPath);
   opacity: var(--_headline__text-Opacity);
 }
