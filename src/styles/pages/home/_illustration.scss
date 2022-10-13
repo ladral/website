@@ -5,13 +5,10 @@ $-illustration__snowfall-animation-Delay: 2s;
 $-illustration__snowfall-flake-Width: 0.375rem;
 $-illustration__snowfall-flake--large-Width: 0.5rem;
 
-.illustration {
-  min-height: 100vh;
-}
-
 .illustration__container {
   @include mixins.make-container();
 
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +17,7 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
 
 .illustration__snowfall {
   position: relative;
-  margin: auto;
+  margin-top: 2.5rem;
   top: 0;
   left: 0;
   right: 0;
@@ -265,4 +262,31 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
   100% {
     opacity: 1;
   }
+}
+
+.illustration__scroll-hint {
+  --_illustration__scroll-hint-Opacity:
+          var(--illustration__scroll-hint-Opacity,
+                  var(--__illustration__scroll-hint-Opacity, 0));
+
+  opacity: var(--_illustration__scroll-hint-Opacity);
+  margin-top: auto;
+  margin-bottom: 3rem;
+
+  animation: illustration__scroll-hin-animation-show 2s both;
+  animation-delay: 4s;
+}
+
+@keyframes illustration__scroll-hin-animation-show {
+  0% {
+    --__illustration__scroll-hint-Opacity: 0;
+  }
+  100% {
+    --__illustration__scroll-hint-Opacity: 1;
+  }
+}
+
+.illustration__scroll-hint-arrow {
+  font-size: 3rem;
+  line-height: 0.7em;
 }
