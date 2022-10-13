@@ -1,6 +1,6 @@
 import {timeline, inView, animate, scroll} from "motion"
 
-const headlines = document.querySelectorAll(".headline--animated");
+const headlines = document.querySelectorAll(".headline--motion");
 
 headlines.forEach(headline => {
     const heading = headline.querySelector(".headline__text")
@@ -18,7 +18,7 @@ headlines.forEach(headline => {
 
     inView(headline, () => {
         const controls = timeline(sequence, {delay: 0.5})
-        
+
         return (leaveInfo) => {
             //TODO: reset animation only if element leaves the window on the upper edge
             controls.currentTime = 0
@@ -27,7 +27,7 @@ headlines.forEach(headline => {
     });
 })
 
-const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow");
+const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
 
 scrollHintArrows.forEach((arrow, index) => {
     animate(
@@ -37,7 +37,7 @@ scrollHintArrows.forEach((arrow, index) => {
     )
 })
 
-const scrollHint = document.querySelector(".illustration__scroll-hint")
+const scrollHint = document.querySelector(".illustration__scroll-hint--motion")
 
 scroll(({y}) => {
         const scrollAnimationDistance = 100;
