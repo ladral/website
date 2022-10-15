@@ -1,5 +1,25 @@
 import {timeline, inView, animate, scroll, spring} from "motion"
 
+const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
+
+scrollHintArrows.forEach((arrow, index) => {
+    animate(
+        arrow,
+        {y: [0, 10 + (index * 2), 0]},
+        {easing: ["ease-in-out", "ease", "ease-in-out"], repeat: Infinity, duration: 1.5}
+    )
+})
+
+const scrollHint = document.querySelector(".illustration__scroll-hint--motion")
+
+scroll(({y}) => {
+        const scrollAnimationDistance = 100;
+        let currentScrollPositionY = y.current;
+
+        scrollHint.style.setProperty("--__illustration__scroll-hint-Opacity", (1 - (currentScrollPositionY / scrollAnimationDistance)));
+    }
+)
+
 const headlines = document.querySelectorAll(".headline--motion");
 
 headlines.forEach(headline => {
@@ -26,26 +46,6 @@ headlines.forEach(headline => {
         }
     });
 })
-
-const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
-
-scrollHintArrows.forEach((arrow, index) => {
-    animate(
-        arrow,
-        {y: [0, 10 + (index * 2), 0]},
-        {easing: ["ease-in-out", "ease", "ease-in-out"], repeat: Infinity, duration: 1.5}
-    )
-})
-
-const scrollHint = document.querySelector(".illustration__scroll-hint--motion")
-
-scroll(({y}) => {
-        const scrollAnimationDistance = 100;
-        let currentScrollPositionY = y.current;
-
-        scrollHint.style.setProperty("--__illustration__scroll-hint-Opacity", (1 - (currentScrollPositionY / scrollAnimationDistance)));
-    }
-)
 
 // reveal-motion
 const revealElements = document.querySelectorAll(".reveal-motion");
