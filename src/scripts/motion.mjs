@@ -20,7 +20,7 @@ headlines.forEach(headline => {
         const controls = timeline(sequence, {delay: 0.5})
 
         return (leaveInfo) => {
-            //TODO: reset animation only if element leaves the window on the upper edge
+            //TODO: reset animation only if element leaves the window on the lower edge
             controls.currentTime = 0
             controls.stop()
         }
@@ -43,6 +43,31 @@ scroll(({y}) => {
         const scrollAnimationDistance = 100;
         let currentScrollPositionY = y.current;
 
-        scrollHint.style.setProperty('--__illustration__scroll-hint-Opacity', (1 - (currentScrollPositionY / scrollAnimationDistance)));
+        scrollHint.style.setProperty("--__illustration__scroll-hint-Opacity", (1 - (currentScrollPositionY / scrollAnimationDistance)));
     }
 )
+
+// reveal-motion
+const revealElements = document.querySelectorAll(".reveal-motion");
+
+revealElements.forEach((revealElement, index) => {
+    reveal(revealElement);
+})
+
+function reveal(element) {
+    inView(element, () => {
+        const elementWidth = element.offsetWidth;
+
+        const controls = animate(
+            element,
+            {x: [(elementWidth * -1), 0], opacity: [0, 1]},
+            {easing: "ease-in-out", duration: 0.7}
+        )
+
+        return (leaveInfo) => {
+            //TODO: reset animation only if element leaves the window on the lower edge
+            controls.currentTime = 0
+            controls.stop()
+        }
+    });
+}
