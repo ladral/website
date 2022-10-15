@@ -1,4 +1,4 @@
-import {timeline, inView, animate, scroll} from "motion"
+import {timeline, inView, animate, scroll, spring} from "motion"
 
 const headlines = document.querySelectorAll(".headline--motion");
 
@@ -61,7 +61,7 @@ function reveal(element) {
         const controls = animate(
             element,
             {x: [(elementWidth * -1), 0], opacity: [0, 1]},
-            {easing: "ease-in-out", duration: 0.7}
+            {easing: spring({ stiffness: 50, damping: 12 }), duration: 0.7}
         )
 
         return (leaveInfo) => {
