@@ -10,7 +10,7 @@
   @include mixins.make-container();
 }
 
-.projects__timeline-indication {
+.projects__timeline-indicator {
   margin: 1.5rem 0;
   color: fx.getOnColor(grey, 800);
 }

@@ -29,15 +29,34 @@ headlines.forEach(headline => {
     const sequence = [
         [heading,
             {opacity: 1, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", transform: "none"},
-            {duration: 1, easing: [0.17, 0.55, 0.55, 1]}
+            {duration: 0.5, easing: [0.17, 0.55, 0.55, 1]}
         ],
         [underscore,
-            {width: "100%", transform: "none"}, {duration: 1, easing: [0.17, 0.55, 0.55, 1]}
+            {width: "100%", transform: "none"}, {duration: 0.5, easing: [0.17, 0.55, 0.55, 1]}
         ]
     ]
 
     inView(headline, () => {
-        const controls = timeline(sequence, {delay: 0.5})
+        const controls = timeline(sequence, {delay: 0.25})
+
+        return (leaveInfo) => {
+            //TODO: reset animation only if element leaves the window on the lower edge
+            controls.currentTime = 0
+            controls.stop()
+        }
+    });
+})
+
+const timelineIndicators = document.querySelectorAll(".projects__timeline-indicator--motion");
+
+timelineIndicators.forEach( indicator => {
+    inView(indicator, () => {
+
+        const controls = animate(
+            indicator,
+            {opacity: [0, 1], clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", transform: "none"},
+            {duration: 0.5, easing: [0.17, 0.55, 0.55, 1], delay: 0.5}
+        )
 
         return (leaveInfo) => {
             //TODO: reset animation only if element leaves the window on the lower edge
