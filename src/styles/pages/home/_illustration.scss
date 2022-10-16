@@ -168,13 +168,11 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
 }
 
 .illustration__project-logo {
-  --_illustration__project-logo-Width:
-          var(--illustration__project-logo-Width,
-                  var(--__illustration__project-logo-Width, 25rem)
-          );
-  --_illustration__project-logo-Height:
-          var(--illustration__project-logo-Height,
-                  var(--__illustration__project-logo-Height, 25rem)
+  --_illustration__project-logo-Width: var(--illustration__project-logo-Width,
+          var(--__illustration__project-logo-Width, 25rem)
+  );
+  --_illustration__project-logo-Height: var(--illustration__project-logo-Height,
+          var(--__illustration__project-logo-Height, 25rem)
   );
   --__illustration__project-name-FontSize: calc(var(--_illustration__project-logo-Height) / 6);
 
@@ -227,9 +225,8 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
 }
 
 .illustration__project-name {
-  --_illustration__project-name-FontSize:
-          var(--illustration__project-name-FontSize,
-                  var(--__illustration__project-name-FontSize, 4.2em));
+  --_illustration__project-name-FontSize: var(--illustration__project-name-FontSize,
+          var(--__illustration__project-name-FontSize, 4.2em));
 
   position: absolute;
   bottom: 20%;
@@ -265,13 +262,13 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
 }
 
 .illustration__scroll-hint {
-  --_illustration__scroll-hint-Opacity:
-          var(--illustration__scroll-hint-Opacity,
-                  var(--__illustration__scroll-hint-Opacity, 0));
+  --_illustration__scroll-hint-Opacity: var(--illustration__scroll-hint-Opacity,
+          var(--__illustration__scroll-hint-Opacity, 0));
 
   opacity: var(--_illustration__scroll-hint-Opacity);
   margin-top: auto;
   margin-bottom: 3rem;
+}
 
   animation: illustration__scroll-hin-animation-show 2s both;
   animation-delay: 4s;

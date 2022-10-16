@@ -47,7 +47,6 @@ headlines.forEach(headline => {
     });
 })
 
-// reveal-motion
 const revealElements = document.querySelectorAll(".reveal-motion");
 
 revealElements.forEach((revealElement, index) => {
@@ -61,7 +60,7 @@ function reveal(element) {
         const controls = animate(
             element,
             {x: [(elementWidth * -1), 0], opacity: [0, 1]},
-            {easing: spring({ stiffness: 50, damping: 12 }), duration: 0.7}
+            {easing: spring({stiffness: 50, damping: 12}), duration: 0.7, delay: 0.5}
         )
 
         return (leaveInfo) => {
@@ -70,4 +69,5 @@ function reveal(element) {
             controls.stop()
         }
     });
+
 }
