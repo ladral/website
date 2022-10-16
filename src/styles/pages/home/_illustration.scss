@@ -270,21 +270,20 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
   margin-bottom: 3rem;
 }
 
-  animation: illustration__scroll-hin-animation-show 2s both;
-  animation-delay: 4s;
-}
-
-@keyframes illustration__scroll-hin-animation-show {
-  0% {
-    --__illustration__scroll-hint-Opacity: 0;
-  }
-  100% {
-    --__illustration__scroll-hint-Opacity: 1;
-  }
-}
-
 .illustration__scroll-hint-arrow {
   min-width: fit-content;
   font-size: 3rem;
   line-height: 0.7em;
+
+  animation: illustration__scroll-hint-arrow-animation-show 2s both;
+  animation-delay: calc(4s + (.2s * var(--i)));
+}
+
+@keyframes illustration__scroll-hint-arrow-animation-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
