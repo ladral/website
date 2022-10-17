@@ -1,4 +1,8 @@
 describe('When navigate to index page', () => {
+    before(() => {
+        cy.visit('http://localhost:1234/index.html');
+    });
+
     context("header", () => {
         it('should have link to favicon', () => {
             cy.visit('http://localhost:1234/index.html').document()
@@ -14,7 +18,7 @@ describe('When navigate to index page', () => {
             cy.get('svg')
                 .each((item, index) => {
                     cy.wrap(item)
-                        .should('have.attr', 'viewBox')
+                        .should('have.attr', 'viewBox');
                 });
         });
     });
@@ -31,7 +35,7 @@ describe('When navigate to index page', () => {
             cy.get('.illustration__scroll-hint').each(item => {
                 cy.scrollTo(0, 100)
                 cy.wrap(item)
-                    .should('not.be.visible')
+                    .should('not.be.visible');
             });
         });
     });
@@ -60,13 +64,36 @@ describe('When navigate to index page', () => {
             });
 
             it('should be visible after scrolling element in view', () => {
-                // arrange
                 cy.get('.projects__container > .headline--motion > .headline__underscore')
                     .first()
                     .scrollIntoView()
-                    .should('be.visible')
+                    .should('be.visible');
             });
         });
     });
 
+    context('project card', () => {
+        it('should not be visible on page load', () => {
+            // arrange
+            const projectCards = cy.get('.reveal-motion > .project__card');
+
+            // act
+            cy.scrollTo(0, 0); // cypress automatically scrolls to element after selecting it -> scroll back to top of page
+
+            // assert
+            projectCards.each(projectCard => {
+                cy.wrap(projectCard)
+                    .should('not.be.visible');
+
+            })
+        });
+
+        it('should be visible after scrolling down', () => {
+            cy.get('.reveal-motion > .project__card').each(item => {
+                cy.wrap(item)
+                    .scrollIntoView()
+                    .should('be.visible');
+            });
+        });
+    });
 })
