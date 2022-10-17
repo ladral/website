@@ -35,4 +35,38 @@ describe('When navigate to index page', () => {
             });
         });
     });
+
+    context('projects headline', () => {
+        context('headline text', () => {
+            it('should not be visible on page load', () => {
+                cy.get('.projects__container > .headline--motion > .headline__text')
+                    .first()
+                    .should('not.be.visible');
+            });
+
+            it('should be visible after scrolling element in view', () => {
+                cy.get('.projects__container > .headline--motion > .headline__text')
+                    .first()
+                    .scrollIntoView()
+                    .should('not.be.visible');
+            });
+        });
+
+        context('headline underscore', () => {
+            it('should not be visible on page load', () => {
+                cy.get('.projects__container > .headline--motion > .headline__underscore')
+                    .first()
+                    .should('not.be.visible');
+            });
+
+            it('should be visible after scrolling element in view', () => {
+                // arrange
+                cy.get('.projects__container > .headline--motion > .headline__underscore')
+                    .first()
+                    .scrollIntoView()
+                    .should('be.visible')
+            });
+        });
+    });
+
 })
