@@ -1,0 +1,42 @@
+@use "../abstracts/functions" as fx;
+
+.headline {
+  --_headline-Margin: var(--headline-Margin, 1rem 0 1rem 0);
+
+  margin: var(--_headline-Margin);
+}
+
+.headline__text {
+  --_headline__text-Opacity: var(--headline__text-Opacity, 1);
+  --_headline__text-ClipPath: var(--headline__text-ClipPath, none);
+  --_headline__text-FontSize: inherit;
+  --_headline__text-FontWeight: inherit;
+  --_headline__text-LineHeight: inherit;
+
+  font-size: var(--_headline__text-FontSize);
+  font-weight: var(--_headline__text-FontWeight);
+  line-height: var(--_headline__text-LineHeight);
+  clip-path: var(--_headline__text-ClipPath);
+  opacity: var(--_headline__text-Opacity);
+}
+
+.headline__underscore {
+  --_headline__underscoore-Width: var(--headline__underscore-Width, 100%);
+
+  width: var(--_headline__underscoore-Width);
+  background-color: fx.getOnColor(grey, 800);
+  display: inline-block;
+  height: 2px;
+  margin: 0.8em 0;
+}
+
+.headline--motion {
+  /* this variation of the component is animated using motion one JavaScript library -> see motion.mjs */
+
+  /* headline text opacity and clip-path will be animated as soon projects headline is visible */
+  --headline__text-Opacity: 0;
+  --headline__text-ClipPath: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+
+  /* headline underscore width will be animated to 100% as soon headline text has been animated */
+  --headline__underscore-Width: 0;
+}

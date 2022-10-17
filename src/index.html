@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link href="assets/icons/ladral-icons.css" rel="stylesheet" type="text/css">
     <link href="./styles/main.scss" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -90,30 +91,46 @@
                       style="--i:6">l</span>
             </div>
         </div>
+        <div class="illustration__scroll-hint illustration__scroll-hint--motion is-flex is-flex-direction-column">
+            <i class="illustration__scroll-hint-arrow illustration__scroll-hint-arrow--motion dral-icon-arrow-down"
+               style="--i:1"></i>
+            <i class="illustration__scroll-hint-arrow illustration__scroll-hint-arrow--motion dral-icon-arrow-down"
+               style="--i:2"></i>
+            <i class="illustration__scroll-hint-arrow illustration__scroll-hint-arrow--motion dral-icon-arrow-down"
+               style="--i:3"></i>
+        </div>
     </div>
 </section>
 <section class="projects">
-    <div class="projects__container">
-        <h2 class="projects__heading headline text-400-bold">Projects</h2>
-        <h3 class="projects__timeline-indication">2022</h3>
-        <div class="dral-card">
-            <div class="dral-card__heading">
-                <h3 class="text-200-bold">Ladral Website</h3>
-            </div>
-            <div class="dral-card__description">
-                <p class="text-100">Rework Website using SASS/SCSS</p>
+    <div class="projects__container u-overflow-hidden">
+        <div class="headline headline--motion text-400-bold">
+            <h2 class="headline__text">Projects</h2>
+            <div class="headline__underscore"></div>
+        </div>
+        <h3 class="projects__timeline-indicator projects__timeline-indicator--motion">2022</h3>
+        <div class="project reveal-motion">
+            <div class="project__card dral-card">
+                <div class="dral-card__heading">
+                    <h3 class="text-200-bold">Ladral Website</h3>
+                </div>
+                <div class="dral-card__description">
+                    <p class="text-100">Rework website using SASS/SCSS</p>
+                </div>
             </div>
         </div>
-        <h3 class="projects__timeline-indication">2021</h3>
-        <div class="dral-card">
-            <div class="dral-card__heading">
-                <h3 class="text-200-bold">Assembly Dashboard</h3>
-            </div>
-            <div class="dral-card__description">
-                <p class="text-100">Dashboard to visualize the ongoing work in an assembly hall</p>
+        <h3 class="projects__timeline-indicator projects__timeline-indicator--motion">2021</h3>
+        <div class="project reveal-motion">
+            <div class="project__card dral-card">
+                <div class="dral-card__heading">
+                    <h3 class="text-200-bold">Assembly Dashboard</h3>
+                </div>
+                <div class="dral-card__description">
+                    <p class="text-100">Dashboard to visualize the ongoing work in an assembly hall</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<script type="module" src="scripts/motion.mjs"></script>
 </body>
 </html>
