@@ -270,6 +270,11 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
   margin-bottom: 3rem;
 }
 
+.illustration__scroll-hint--motion {
+  /* this variation of the component is animated using motion one JavaScript library -> see motion.mjs */
+  /* hint: do not preset styles within this block -> support browsers with blocked scripts */
+}
+
 .illustration__scroll-hint-arrow {
   min-width: fit-content;
   font-size: 3rem;
@@ -283,6 +288,11 @@ $-illustration__snowfall-flake--large-Width: 0.5rem;
       display: none;
     }
   }
+}
+
+.illustration__scroll-hint-arrow--motion {
+  /* this variation of the component is animated using motion one JavaScript library -> see motion.mjs */
+  /* hint: do not preset styles within this block -> support browsers with blocked scripts */
 }
 
 @keyframes illustration__scroll-hint-arrow-animation-show {

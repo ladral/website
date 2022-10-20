@@ -7,8 +7,6 @@
 }
 
 .headline__text {
-  --_headline__text-Opacity: var(--headline__text-Opacity, 1);
-  --_headline__text-ClipPath: var(--headline__text-ClipPath, none);
   --_headline__text-FontSize: inherit;
   --_headline__text-FontWeight: inherit;
   --_headline__text-LineHeight: inherit;
@@ -21,9 +19,7 @@
 }
 
 .headline__underscore {
-  --_headline__underscoore-Width: var(--headline__underscore-Width, 100%);
-
-  width: var(--_headline__underscoore-Width);
+  width: 100%;
   background-color: fx.getOnColor(grey, 800);
   display: inline-block;
   height: 2px;
@@ -31,12 +27,13 @@
 }
 
 .headline--motion {
-  /* this variation of the component is animated using motion one JavaScript library -> see motion.mjs */
+  /* this variation of the component is animated using motion one JavaScript library -> see motion.mjs
 
-  /* headline text opacity and clip-path will be animated as soon projects headline is visible */
-  --headline__text-Opacity: 0;
-  --headline__text-ClipPath: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  animated styles:
+  - headline text opacity and clip-path will be animated as soon projects headline is visible
+  - headline underscore width will be animated to 100% as soon headline text has been animated
 
-  /* headline underscore width will be animated to 100% as soon headline text has been animated */
-  --headline__underscore-Width: 0;
+  hint: do not preset styles within this block -> support browsers with blocked scripts
+
+  */
 }
