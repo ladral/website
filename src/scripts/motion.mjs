@@ -50,6 +50,8 @@ headlines.forEach(headline => {
 const timelineIndicators = document.querySelectorAll(".projects__timeline-indicator--motion");
 
 timelineIndicators.forEach( indicator => {
+    indicator.style.opacity = 0;
+
     inView(indicator, () => {
 
         const controls = animate(
@@ -69,6 +71,8 @@ timelineIndicators.forEach( indicator => {
 const revealElements = document.querySelectorAll(".reveal-motion");
 
 revealElements.forEach((revealElement, index) => {
+    revealElement.style.opacity = 0;
+
     reveal(revealElement);
 })
 
