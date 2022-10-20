@@ -23,8 +23,13 @@ scroll(({y}) => {
 const headlines = document.querySelectorAll(".headline--motion");
 
 headlines.forEach(headline => {
-    const heading = headline.querySelector(".headline__text")
-    const underscore = headline.querySelector(".headline__underscore")
+    const heading = headline.querySelector(".headline__text");
+    const underscore = headline.querySelector(".headline__underscore");
+
+    // preset styles to prevent design glitch on firs scroll
+    heading.style.opacity = 0;
+    heading.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
+    underscore.style.width = "0%";
 
     const sequence = [
         [heading,
@@ -50,6 +55,7 @@ headlines.forEach(headline => {
 const timelineIndicators = document.querySelectorAll(".projects__timeline-indicator--motion");
 
 timelineIndicators.forEach( indicator => {
+    // preset styles to prevent design glitch on firs scroll
     indicator.style.opacity = 0;
 
     inView(indicator, () => {
@@ -71,6 +77,7 @@ timelineIndicators.forEach( indicator => {
 const revealElements = document.querySelectorAll(".reveal-motion");
 
 revealElements.forEach((revealElement, index) => {
+    // preset styles to prevent design glitch on firs scroll
     revealElement.style.opacity = 0;
 
     reveal(revealElement);
