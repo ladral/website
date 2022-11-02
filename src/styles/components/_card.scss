@@ -24,13 +24,13 @@
   gap: 1rem;
   overflow: hidden;
 
-  transition: var(--token-transition);
+  transition: #{fx.getToken(transition)};
   transition-property: box-shadow;
 
   &:hover {
     cursor: pointer;
 
-    --_dral-card-BoxShadow--hover: var(--token-shadow);
+    --_dral-card-BoxShadow--hover: #{fx.getToken(shadow)};
 
     --_dral-card-BoxShadow: var(--dral-card-BoxShadow--hover, var(--_dral-card-BoxShadow--hover));
   }
