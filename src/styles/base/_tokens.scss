@@ -6,7 +6,7 @@
   --token-shadow:
           inset 0 1px 0 0 #{fx.getColor(grey, 600)},
           0 2px 3px #{fx.getColor(grey, 900)},
-          0 8px 8px #{fx.getColor(grey, 900)};
+          0 20px 20px -18px #{fx.getColor(grey, 900)};
 
-  --token-transition: ease-in-out 0.3s;
+  --token-transition: ease-in-out 0.2s;
 }
