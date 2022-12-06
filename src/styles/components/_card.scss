@@ -4,7 +4,6 @@
   --_dral_card-Color: var(--dral-card-Color, #{fx.getOnColor(grey, 700)});
   --_dral-card-BackgroundColor: var(--dral-card-BackgroundColor, #{fx.getColor(grey, 700)});
   --_dral-card-BorderRadius: var(--dral-card-BorderRadius, 0.5rem 0.5rem);
-  --_dral-card-BoxShadow: var(--dral-card-BoxShadow, inset 0 1px 0 0 #{fx.getColor(grey, 600)});
   --_dral-card-MinHeight: var(--dral-card-MinHeight, 1rem);
   --_dral-card-MinWidth: var(--dral-card-MinWidth, 16rem);
   --_dral-card-MaxWidth: var(--dral-card-MaxWidth, 371px);
@@ -13,7 +12,6 @@
   color: var(--_dral_card-Color);
   background-color: var(--_dral-card-BackgroundColor);
   border-radius: var(--_dral-card-BorderRadius);
-  box-shadow: var(--_dral-card-BoxShadow);
   margin: var(--_dral-card-Margin);
   min-width: var(--_dral-card-MinWidth);
   max-width: var(--_dral-card-MaxWidth);
