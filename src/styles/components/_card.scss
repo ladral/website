@@ -19,7 +19,6 @@
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   overflow: hidden;
 
   transition: #{fx.getToken(transition)};
@@ -29,8 +28,9 @@
     cursor: pointer;
 
     --_dral-card-BoxShadow--hover: #{fx.getToken(shadow)};
-
     --_dral-card-BoxShadow: var(--dral-card-BoxShadow--hover, var(--_dral-card-BoxShadow--hover));
+
+    box-shadow: var(--_dral-card-BoxShadow);
   }
 }
 
@@ -51,4 +51,14 @@
   --_dral-card__content-Padding: var(--dral-card__content-Padding, 1.5rem);
 
   padding: var(--_dral-card__content-Padding);
+}
+
+.dral-card__content-heading {
+  margin-bottom: 0.4rem;
+}
+
+.dral-card__content-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
