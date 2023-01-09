@@ -13,9 +13,9 @@ describe('When navigate to index page', () => {
         });
     });
 
-    context('svg elements', () => {
+    context('project icon', () => {
         it('should have viewbox attribute', () => {
-            cy.get('svg')
+            cy.get('.illustration__project-icon')
                 .each((item, index) => {
                     cy.wrap(item)
                         .should('have.attr', 'viewBox');
