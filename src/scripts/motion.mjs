@@ -41,13 +41,19 @@ headlines.forEach(headline => {
         ]
     ]
 
+    let runAnimation = true;
+
     inView(headline, () => {
         const controls = timeline(sequence, {delay: 0.25})
 
+        if (runAnimation === false) {
+            controls.finish()
+        }
+
         return (leaveInfo) => {
-            //TODO: reset animation only if element leaves the window on the lower edge
             controls.currentTime = 0
             controls.stop()
+            runAnimation = isElementLeavingBottom(leaveInfo)
         }
     });
 })
@@ -58,18 +64,23 @@ timelineIndicators.forEach( indicator => {
     // preset styles to prevent design glitch on firs scroll
     indicator.style.opacity = 0;
 
-    inView(indicator, () => {
+    let runAnimation = true;
 
+    inView(indicator, () => {
         const controls = animate(
             indicator,
             {opacity: [0, 1], clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", transform: "none"},
             {duration: 0.5, easing: [0.17, 0.55, 0.55, 1], delay: 0.5}
         )
 
+        if (runAnimation === false) {
+            controls.finish()
+        }
+
         return (leaveInfo) => {
-            //TODO: reset animation only if element leaves the window on the lower edge
             controls.currentTime = 0
             controls.stop()
+            runAnimation = isElementLeavingBottom(leaveInfo)
         }
     });
 })
@@ -84,6 +95,8 @@ revealElements.forEach((revealElement, index) => {
 })
 
 function reveal(element) {
+    let runAnimation = true;
+
     inView(element, () => {
         const elementWidth = element.offsetWidth;
 
@@ -93,11 +106,18 @@ function reveal(element) {
             {easing: spring({stiffness: 50, damping: 12}), duration: 0.7, delay: 0.5}
         )
 
+        if (runAnimation === false) {
+            controls.finish()
+        }
+
         return (leaveInfo) => {
-            //TODO: reset animation only if element leaves the window on the lower edge
             controls.currentTime = 0
             controls.stop()
+            runAnimation = isElementLeavingBottom(leaveInfo)
         }
     });
+}
 
+function isElementLeavingBottom(leaveInfo) {
+    return (leaveInfo.boundingClientRect.top > 0)
 }
