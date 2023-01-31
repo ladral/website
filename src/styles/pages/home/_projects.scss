@@ -11,10 +11,12 @@
 }
 
 .projects__timeline {
+  --_projects__timeline-Width: var(--projects__timeline-Width, 2px);
+
   position: absolute;
-  width: 2px;
-  margin-left: calc(1rem - 1px);
   height: 100%;
+  width: var(--_projects__timeline-Width);
+  margin-left: calc(1rem - calc(var(--_projects__timeline-Width) / 2));
   background-color: fx.getColor(primary, 800);
 }
 
