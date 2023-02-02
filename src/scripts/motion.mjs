@@ -11,7 +11,6 @@ scrollHintArrows.forEach((arrow, index) => {
 })
 
 const scrollHint = document.querySelector(".illustration__scroll-hint--motion")
-
 scroll(({y}) => {
         const scrollAnimationDistance = 100;
         let currentScrollPositionY = y.current;
@@ -58,9 +57,31 @@ headlines.forEach(headline => {
     });
 })
 
+const projectsTimelineStartIcon = document.querySelector(".projects__timeline-start-icon");
+const projectsTimeline = document.querySelector(".projects__timeline");
+// preset styles to prevent design glitch on firs scroll
+projectsTimelineStartIcon.style.opacity = 0;
+projectsTimeline.style.height = 0;
+
+inView(projectsTimelineStartIcon, () => {
+
+    const sequence = [
+        [projectsTimelineStartIcon,
+            {opacity: [0, 1]},
+            {duration: 1, easing: "ease-out"}
+        ],
+        [projectsTimeline,
+            {height: ["0%", "100%"]},
+            {duration: 2, easing: "ease-in-out", delay: 0.5}
+        ]
+    ]
+
+    let controls = timeline(sequence);
+});
+
 const timelineIndicators = document.querySelectorAll(".projects__timeline-indicator--motion");
 
-timelineIndicators.forEach( indicator => {
+timelineIndicators.forEach(indicator => {
     // preset styles to prevent design glitch on firs scroll
     indicator.style.opacity = 0;
 
