@@ -1,6 +1,7 @@
 import {timeline, inView, animate, scroll, spring} from "motion"
 import {isElementLeavingBottom} from "./motion.helper.mjs";
 import {registerRevealMotion} from "./reveal.motion.mjs";
+import {registerTimelineMotion, registerFadeInAnimation} from "./timeline.motion.mjs";
 
 const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
 
@@ -59,54 +60,15 @@ headlines.forEach(headline => {
     });
 })
 
+/* timeline animation */
 const projectsTimelineStartIcon = document.querySelector(".projects__timeline-start-icon");
 const projectsTimeline = document.querySelector(".projects__timeline");
-// preset styles to prevent design glitch on firs scroll
-projectsTimelineStartIcon.style.opacity = 0;
-projectsTimeline.style.height = 0;
+registerTimelineMotion(projectsTimelineStartIcon, projectsTimeline)
 
-inView(projectsTimelineStartIcon, () => {
-
-    const sequence = [
-        [projectsTimelineStartIcon,
-            {opacity: [0, 1]},
-            {duration: 1, easing: "ease-out"}
-        ],
-        [projectsTimeline,
-            {height: ["0%", "100%"]},
-            {duration: 2, easing: "ease-in-out", delay: 0.5}
-        ]
-    ]
-
-    let controls = timeline(sequence);
-});
-
+/* fade-in animation for timeline indicators */
 const timelineIndicators = document.querySelectorAll(".projects__timeline-indicator--motion");
+timelineIndicators.forEach(registerFadeInAnimation);
 
-timelineIndicators.forEach(indicator => {
-    // preset styles to prevent design glitch on firs scroll
-    indicator.style.opacity = 0;
-
-    let runAnimation = true;
-
-    inView(indicator, () => {
-        const controls = animate(
-            indicator,
-            {opacity: [0, 1], clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", transform: "none"},
-            {duration: 0.5, easing: [0.17, 0.55, 0.55, 1], delay: 0.5}
-        )
-
-        if (runAnimation === false) {
-            controls.finish()
-        }
-
-        return (leaveInfo) => {
-            controls.currentTime = 0
-            controls.stop()
-            runAnimation = isElementLeavingBottom(leaveInfo)
-        }
-    });
-})
-
+/* reveal motion for project cards */
 const revealElements = document.querySelectorAll(".reveal-motion");
 revealElements.forEach(registerRevealMotion);
