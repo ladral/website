@@ -1,4 +1,5 @@
 import {timeline, inView, animate, scroll, spring} from "motion"
+import {isElementLeavingBottom} from "./motion.helper.mjs";
 
 const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
 
@@ -137,9 +138,4 @@ function reveal(element) {
             runAnimation = isElementLeavingBottom(leaveInfo)
         }
     });
-}
-
-function isElementLeavingBottom(leaveInfo) {
-    if (!leaveInfo.boundingClientRect || !leaveInfo.boundingClientRect.top) return false
-    return (leaveInfo.boundingClientRect.top > 0)
 }
