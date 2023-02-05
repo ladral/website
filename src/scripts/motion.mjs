@@ -1,5 +1,6 @@
 import {timeline, inView, animate, scroll, spring} from "motion"
 import {isElementLeavingBottom} from "./motion.helper.mjs";
+import {registerRevealMotion} from "./reveal.motion.mjs";
 
 const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
 
@@ -108,34 +109,4 @@ timelineIndicators.forEach(indicator => {
 })
 
 const revealElements = document.querySelectorAll(".reveal-motion");
-
-revealElements.forEach((revealElement, index) => {
-    // preset styles to prevent design glitch on firs scroll
-    revealElement.style.opacity = 0;
-
-    reveal(revealElement);
-})
-
-function reveal(element) {
-    let runAnimation = true;
-
-    inView(element, () => {
-        const elementWidth = element.offsetWidth;
-
-        const controls = animate(
-            element,
-            {x: [(elementWidth * -1), 0], opacity: [0, 1]},
-            {easing: spring({stiffness: 50, damping: 12}), duration: 0.7, delay: 0.5}
-        )
-
-        if (runAnimation === false) {
-            controls.finish()
-        }
-
-        return (leaveInfo) => {
-            controls.currentTime = 0
-            controls.stop()
-            runAnimation = isElementLeavingBottom(leaveInfo)
-        }
-    });
-}
+revealElements.forEach(registerRevealMotion);
