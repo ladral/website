@@ -2,16 +2,11 @@ import {timeline, inView, animate, scroll, spring} from "motion"
 import {isElementLeavingBottom} from "./motion.helper.mjs";
 import {registerRevealMotion} from "./reveal.motion.mjs";
 import {registerTimelineMotion, registerFadeInAnimation} from "./timeline.motion.mjs";
+import {registerBounceAnimation} from "./scroll.motion.mjs";
 
+/* scroll hint animation */
 const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
-
-scrollHintArrows.forEach((arrow, index) => {
-    animate(
-        arrow,
-        {y: [0, 10 + (index * 2), 0]},
-        {easing: ["ease-in-out", "ease", "ease-in-out"], repeat: Infinity, duration: 1.5}
-    )
-})
+scrollHintArrows.forEach(registerBounceAnimation)
 
 const scrollHint = document.querySelector(".illustration__scroll-hint--motion")
 scroll(({y}) => {
@@ -20,7 +15,7 @@ scroll(({y}) => {
 
         scrollHint.style.setProperty("--__illustration__scroll-hint-Opacity", (1 - (currentScrollPositionY / scrollAnimationDistance)));
     }
-)
+);
 
 const headlines = document.querySelectorAll(".headline--motion");
 
