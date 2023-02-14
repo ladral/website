@@ -26,12 +26,12 @@ headlines.forEach(headline => {
 })
 
 /* timeline animation */
-const projectsTimelineStartIcon = document.querySelector(".projects__timeline-start-icon");
-const projectsTimeline = document.querySelector(".projects__timeline");
-registerTimelineMotion(projectsTimelineStartIcon, projectsTimeline)
+const timelineStartIcon = document.querySelector(".timeline__start-icon");
+const timelineLine = document.querySelector(".timeline__line");
+registerTimelineMotion(timelineStartIcon, timelineLine)
 
 /* fade-in animation for timeline indicators */
-const timelineIndicators = document.querySelectorAll(".projects__timeline-indicator--motion");
+const timelineIndicators = document.querySelectorAll(".timeline__indicator--motion");
 timelineIndicators.forEach(registerFadeInAnimation);
 
 /* reveal motion for project cards */
