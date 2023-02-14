@@ -1,5 +1,6 @@
 @use "../../abstracts/functions" as fx;
 @use "../../abstracts/mixins" as mixins;
+@use "../../abstracts/size" as *;
 
 .projects {
   padding: 3rem 0;
@@ -39,4 +40,9 @@
 
 .project__card {
   margin-left: 8rem;
+
+  /* mobile devices */
+  @media (max-width: $breakpoint-sm) {
+    margin-left: 2rem;
+  }
 }
