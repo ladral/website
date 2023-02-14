@@ -1,19 +1,19 @@
 import {animate, inView, timeline} from "motion";
 import {isElementLeavingBottom} from "./motion.helper.mjs";
 
-function registerTimelineMotion(projectsTimelineStartIcon, projectsTimeline) {
+function registerTimelineMotion(projectsTimeline, timelineStartIcon, timelineLine) {
     // preset styles to prevent design glitch on firs scroll
-    projectsTimelineStartIcon.style.opacity = 0;
-    projectsTimeline.style.height = 0;
+    timelineStartIcon.style.opacity = 0;
+    timelineLine.style.height = 0;
 
-    inView(projectsTimelineStartIcon, () => {
+    inView(projectsTimeline, () => {
 
         const sequence = [
-            [projectsTimelineStartIcon,
+            [timelineStartIcon,
                 {opacity: [0, 1]},
                 {duration: 1, easing: "ease-out"}
             ],
-            [projectsTimeline,
+            [timelineLine,
                 {height: ["0%", "100%"]},
                 {duration: 2, easing: "ease-in-out", delay: 0.5}
             ]

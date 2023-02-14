@@ -26,9 +26,10 @@ headlines.forEach(headline => {
 })
 
 /* timeline animation */
+const projectsTimeline = document.querySelector(".projects__timeline");
 const timelineStartIcon = document.querySelector(".timeline__start-icon");
 const timelineLine = document.querySelector(".timeline__line");
-registerTimelineMotion(timelineStartIcon, timelineLine)
+registerTimelineMotion(projectsTimeline, timelineStartIcon, timelineLine)
 
 /* fade-in animation for timeline indicators */
 const timelineIndicators = document.querySelectorAll(".timeline__indicator--motion");
