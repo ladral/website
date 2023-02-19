@@ -11,6 +11,10 @@
   @include mixins.make-container();
 }
 
+.projects__timeline {
+  margin-bottom: 1rem;
+}
+
 .timeline__line {
   --_timeline__line-Width: var(--timeline__line-Width, 2px);
 
