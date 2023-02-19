@@ -1,0 +1,9 @@
+@use "../abstracts/functions" as fx;
+
+.footer {
+  --_footer-Height: var(--footer-Height, 4rem);
+
+  height: var(--_footer-Height);
+  color: fx.getOnColor(grey, 900);
+  background-color: fx.getColor(grey, 900);
+}
