@@ -19,10 +19,10 @@
 
 @font-face {
     font-family: "remixicon";
-    src: url('remixicon/remixicon.eot?t=1665344043153'); /* IE9*/
-    src: url('remixicon/remixicon.eot?t=1665344043153#iefix') format('embedded-opentype'), /* IE6-IE8 */ url("remixicon/remixicon.woff2?t=1665344043153") format("woff2"),
-    url("remixicon/remixicon.woff?t=1665344043153") format("woff"),
-    url('remixicon/remixicon.ttf?t=1665344043153') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('remixicon/remixicon.svg?t=1665344043153#remixicon') format('svg'); /* iOS 4.1- */
+    src: url('remixicon/remixicon.eot?t=1676830577081'); /* IE9*/
+    src: url('remixicon/remixicon.eot?t=1676830577081#iefix') format('embedded-opentype'), /* IE6-IE8 */ url("remixicon/remixicon.woff2?t=1676830577081") format("woff2"),
+    url("remixicon/remixicon.woff?t=1676830577081") format("woff"),
+    url('remixicon/remixicon.ttf?t=1676830577081') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('remixicon/remixicon.svg?t=1676830577081#remixicon') format('svg'); /* iOS 4.1- */
     font-display: swap;
 }
 
@@ -34,7 +34,7 @@
     speak: never;
     display: inline-block;
     text-decoration: inherit;
-    width: 1rem;
+    width: auto;
     text-align: center;
 
     /* For safety - reset parent styles, that can break glyph codes */
@@ -73,4 +73,9 @@
 /*.ri-arrow-left-s-line:before { content: "\ea64"; }*/
 .dral-icon-arrow-left:before {
     content: "\ea64";
+}
+
+/*.ri-github-fill:before { content: "\edca"; }*/
+.dral-icon-github:before {
+    content: "\edca";
 }
