@@ -25,16 +25,21 @@
 .footer__links {
   --_footer__links-FontSize: var(--footer__links-FontSize, 2.5rem);
   --_footer__links-Display: var(--footer__links-Display, flex);
+  --_footer__links-Gap: var(--footer__links-Gap, 0.625rem);
   --_footer__links-AlignItems: var(--footer__links-AlignItems, center);
   --_footer__links-MarginLeft: var(--footer__links-MarginLeft, auto);
 
   font-size: var(--_footer__links-FontSize);
   display: var(--_footer__links-Display);
+  gap: var(--_footer__links-Gap);
   align-items: var(--_footer__links-AlignItems);
   margin-left: var(--_footer__links-MarginLeft);
 }
 
 .footer__link-item {
+  --icon-Height: 1em;
+  --icon-Width: 1em;
+
   color: fx.getOnColor(grey, 900);
   text-decoration: none;
   display: block;
