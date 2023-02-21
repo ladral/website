@@ -48,11 +48,15 @@
   border-radius: var(--_footer__link-BorderRadius);
   text-decoration: none;
   display: block;
-  
+
   transition: #{fx.getToken(transition)};
   transition-property: box-shadow;
 
   &:hover {
     box-shadow: var(--_footer__link-BoxShadow);
+  }
+
+  &:focus {
+    outline: #{fx.getToken(outline)};
   }
 }
