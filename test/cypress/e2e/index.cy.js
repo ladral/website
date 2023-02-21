@@ -15,7 +15,7 @@ describe('When navigate to index page', () => {
 
     context('project icon', () => {
         it('should have viewbox attribute', () => {
-            cy.get('.illustration__project-icon')
+            cy.get('[data-cy="ladral-main-icon"]')
                 .each((item, index) => {
                     cy.wrap(item)
                         .should('have.attr', 'viewBox');
@@ -25,14 +25,14 @@ describe('When navigate to index page', () => {
 
     context('scroll hint', () => {
         it('should be visible on page load', () => {
-            cy.get('.illustration__scroll-hint').each(item => {
+            cy.get('[data-cy="scroll-hint"]').each(item => {
                 cy.wrap(item)
                     .should('be.visible');
             });
         });
 
         it('should not be visible after scrolling down', () => {
-            cy.get('.illustration__scroll-hint').each(item => {
+            cy.get('[data-cy="scroll-hint"]').each(item => {
                 cy.scrollTo(0, 100)
                 cy.wrap(item)
                     .should('not.be.visible');
@@ -43,28 +43,28 @@ describe('When navigate to index page', () => {
     context('projects headline', () => {
         context('headline text', () => {
             it('should not be visible on page load', () => {
-                cy.get('.projects__container > .headline--motion > .headline__text')
+                cy.get('[data-cy="headline__text"]')
                     .first()
                     .should('not.be.visible');
             });
 
             it('should be visible after scrolling element in view', () => {
-                cy.get('.projects__container > .headline--motion > .headline__text')
+                cy.get('[data-cy="headline__text"]')
                     .first()
                     .scrollIntoView()
-                    .should('not.be.visible');
+                    .should('be.visible');
             });
         });
 
         context('headline underscore', () => {
             it('should not be visible on page load', () => {
-                cy.get('.projects__container > .headline--motion > .headline__underscore')
+                cy.get('[data-cy="headline__underscore"]')
                     .first()
                     .should('not.be.visible');
             });
 
             it('should be visible after scrolling element in view', () => {
-                cy.get('.projects__container > .headline--motion > .headline__underscore')
+                cy.get('[data-cy="headline__underscore"]')
                     .first()
                     .scrollIntoView()
                     .should('be.visible');
@@ -75,7 +75,7 @@ describe('When navigate to index page', () => {
     context('project card', () => {
         it('should not be visible on page load', () => {
             // arrange
-            const projectCards = cy.get('.reveal-motion > .project__card');
+            const projectCards = cy.get('[data-cy="project__card--reveal"]');
 
             // act
             cy.scrollTo(0, 0); // cypress automatically scrolls to element after selecting it -> scroll back to top of page
@@ -89,7 +89,7 @@ describe('When navigate to index page', () => {
         });
 
         it('should be visible after scrolling down', () => {
-            cy.get('.reveal-motion > .project__card').each(item => {
+            cy.get('[data-cy="project__card--reveal"]').each(item => {
                 cy.wrap(item)
                     .scrollIntoView()
                     .should('be.visible');

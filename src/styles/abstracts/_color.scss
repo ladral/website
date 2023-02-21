@@ -2,8 +2,11 @@
 
 :root {
   /* Colors: Primary */
-  --color-primary: #{var.$color-primary};
-  --color-secondary: #{var.$color-secondary};
+  --color-primary-800: #{var.$color-primary};
+  --color-primary: var(--color-primary-800);
+
+  --color-secondary-800: #{var.$color-secondary};
+  --color-secondary: var(--color-secondary-800);
 
   /* Colors: Black */
   --color-black: rgba(0, 0, 0, 1);
