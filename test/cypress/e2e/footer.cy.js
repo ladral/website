@@ -1,9 +1,9 @@
 describe('footer', () => {
-    before(() => {
-        cy.visit('http://localhost:1234/index.html');
-    });
+        beforeEach(() => {
+            cy.visit('http://localhost:1234/index.html');
+        });
 
-    context("links", () => {
+    context("links",() => {
         it('docker link should refer to docker hub profile', () => {
             cy.get('[data-cy="footer__docker-link"]')
                 .should('have.attr', 'href')
