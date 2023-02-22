@@ -1,5 +1,5 @@
 describe('When navigate to index page', () => {
-    before(() => {
+    beforeEach(() => {
         cy.visit('http://localhost:1234/index.html');
     });
 
