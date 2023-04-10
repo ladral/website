@@ -19,10 +19,10 @@
 
 @font-face {
     font-family: "remixicon";
-    src: url('remixicon/remixicon.eot?t=1676830577081'); /* IE9*/
-    src: url('remixicon/remixicon.eot?t=1676830577081#iefix') format('embedded-opentype'), /* IE6-IE8 */ url("remixicon/remixicon.woff2?t=1676830577081") format("woff2"),
-    url("remixicon/remixicon.woff?t=1676830577081") format("woff"),
-    url('remixicon/remixicon.ttf?t=1676830577081') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('remixicon/remixicon.svg?t=1676830577081#remixicon') format('svg'); /* iOS 4.1- */
+    src: url('remixicon/remixicon.eot?t=1681155421 '); /* IE9*/
+    src: url('remixicon/remixicon.eot?t=1681155421 #iefix') format('embedded-opentype'), /* IE6-IE8 */ url("remixicon/remixicon.woff2?t=1681155421 ") format("woff2"),
+    url("remixicon/remixicon.woff?t=1681155421 ") format("woff"),
+    url('remixicon/remixicon.ttf?t=1681155421 ') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('remixicon/remixicon.svg?t=1681155421 #remixicon') format('svg'); /* iOS 4.1- */
     font-display: swap;
 }
 
@@ -41,12 +41,20 @@
     font-variant: normal;
     text-transform: none;
 
-    /* fix buttons height. for twitter bootstrap */
-    line-height: 1em;
+    /* fix remix icon v3 breaking change */
+    line-height: 0.725em;
 
     /* Font smoothing. That was taken from TWBS */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="dral-icon-"]:before,
+[class*="dral-icon-"]:before {
+
+    /* fix remix icon v3 breaking change */
+    display: inline-flex;
+    vertical-align: 0.275em;
 }
 
 /*
@@ -78,4 +86,9 @@
 /*.ri-github-fill:before { content: "\edca"; }*/
 .dral-icon-github:before {
     content: "\edca";
+}
+
+/*.ri-close-line:before { content: "\eb99"; }*/
+.dral-icon-close-line:before {
+    content: "\eb99";
 }
