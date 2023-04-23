@@ -23,12 +23,49 @@
 .modal-content {
   --_modal-content-BackgroundColor: var(--modal-content-BackgroundColor, #{fx.getColor(white, 800)});
   --_modal-content-Color: var(--modal-content-Color, #{fx.getOnColor(white, 800)});
+  --_modal-content-Padding: var(--modal-content-Padding, 0.25rem 1.25rem 1.25rem 1.25rem);
+  --_modal-content-Border: var(--modal-content-Border,  1px solid #{fx.getColor(gray, 900)});
 
   background-color: var(--_modal-content-BackgroundColor);
   color: var(--_modal-content-Color);
-
+  padding: var(--_modal-content-Padding);
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
+  border: var(--_modal-content-Border);
+
   width: 80%;
+}
+
+.modal-content__close {
+  position: relative;
+  cursor: pointer;
+
+  &-icon {
+    font-size: 2em;
+    border-radius: 4rem;
+  }
+
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+
+
+    & .modal-content__close-background__shape {
+      stroke-dasharray: 0 110;
+      stroke-dashoffset: -40;
+      stroke-width: 0px;
+      fill: transparent;
+      stroke: fx.getColor(primary, 800);
+      border-bottom: 2px solid black;
+      transition: stroke-width 0.8s, stroke-dashoffset 0.8s, stroke-dasharray 0.8s;
+    }
+
+    &:hover .modal-content__close-background__shape {
+      stroke-width: 1.5px;
+      stroke-dashoffset: 0;
+      stroke-dasharray: 110;
+    }
+  }
 }
