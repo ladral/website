@@ -1,3 +1,8 @@
+import '../../../node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css';
+import Splide from '@splidejs/splide';
+
+new Splide( '.splide' ).mount();
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('modal', () => ({
         state: {
@@ -13,9 +18,6 @@ document.addEventListener('alpine:init', () => {
 
             let page = document.querySelector(".page")
             page.classList.toggle('u-no-scroll', true);
-
-            console.log("set")
-
         },
         closeModal() {
             this.state.open = false;
