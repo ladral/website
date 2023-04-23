@@ -233,13 +233,12 @@
          @click="closeModal()">
         <div class="modal-content" @click.stop>
             <div class="is-flex is-flex-direction-row is-justify-content-end">
-                <div class="modal-content__close" @click="closeModal()">
-                    <i class="modal-content__close-icon dral-icon-close-line" @click="closeModal()"></i>
-                    <svg class="modal-content__close-background" xmlns="http://www.w3.org/2000/svg">
-                        <circle class="modal-content__close-background__shape" cx="16" cy="16" r="15"></circle>
+                <div class="close" @click="closeModal()">
+                    <i class="close-icon dral-icon-close-line" @click="closeModal()"></i>
+                    <svg class="close-background" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="close-background__shape" cx="16" cy="16" r="15"></circle>
                     </svg>
                 </div>
-
             </div>
             <div class="project-detail__header" x-text="project.title"></div>
         </div>
