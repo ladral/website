@@ -1,7 +1,8 @@
 import '../../../node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css';
+import '../../../node_modules/@splidejs/splide/dist/css/splide-core.min.css';
 import Splide from '@splidejs/splide';
 
-new Splide( '.splide' ).mount();
+let splide = new Splide( '.splide', {pagination: true}).mount();
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('modal', () => ({
@@ -13,6 +14,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         setModal(title)  {
+            splide.go(0);
             this.state.open = true;
             this.project.title = title;
 
