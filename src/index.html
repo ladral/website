@@ -240,13 +240,19 @@
                     </svg>
                 </div>
             </div>
-            <div class="project-detail__header" x-text="project.title"></div>
             <div class="modal-content__splide splide" aria-label="Project insights">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide" x-text="project.title"></li>
-                        <li class="splide__slide" x-text="project.title"></li>
-                        <li class="splide__slide" x-text="project.title"></li>
+
+                        <template x-for="image in project.images">
+                        <li class="splide__slide" :id="image.id" role="tabpanel" aria-roledescription="slide" aria-label="1 of 2" style="width: calc(100%);" aria-hidden="true">
+                            <img x-bind:src="image.url" class="splide__slide-image"/>
+                        </li>
+                        <li class="splide__slide" :id="image.id" role="tabpanel" aria-roledescription="slide" aria-label="1 of 2" style="width: calc(100%);" aria-hidden="true">
+                            <img x-bind:src="image.url" class="splide__slide-image"/>
+                        </li>
+
+                        </template>
                     </ul>
                 </div>
             </div>

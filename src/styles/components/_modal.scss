@@ -40,7 +40,13 @@
   splide - override default styles
 */
 .modal-content__splide {
-  min-height: 20rem;
+  height: 25rem;
+}
+
+.splide__slide-image {
+  display: block;
+  height: 24rem;
+  margin: 0 auto;
 }
 
 
