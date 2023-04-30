@@ -1,14 +1,15 @@
 import '../../../node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css';
 import '../../../node_modules/@splidejs/splide/dist/css/splide-core.min.css';
 import Splide from '@splidejs/splide';
+
 let gallery = new Splide('.splide').mount();
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('modal', () => ({
         state: {
-            open: false
+            open: false,
+            images: [],
         },
-        images: [],
         projects: [
             {
                 title: 'Ladral Website',
@@ -35,16 +36,17 @@ document.addEventListener('alpine:init', () => {
         ],
 
         setModal(title) {
+            // deactivate background scroll
+            let page = document.querySelector(".page")
+            page.classList.toggle('u-no-scroll', true);
+
             // get images for matching project title
             // an update of the images will trigger a gallery refresh -> see x-init watching for images
-            this.images = this.projects.filter(project => project.title === title).map(project => project.images)[0];
+            this.state.images = this.projects.filter(project => project.title === title).map(project => project.images)[0];
+            this.state.open = true;
 
             // navigate gallery to first image
             gallery.go(0);
-
-            let page = document.querySelector(".page")
-            page.classList.toggle('u-no-scroll', true);
-            this.state.open = true;
         },
         closeModal() {
             this.state.open = false;
