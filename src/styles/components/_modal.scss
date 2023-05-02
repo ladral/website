@@ -1,4 +1,5 @@
 @use "../abstracts/functions" as fx;
+@use "../abstracts/size" as size;
 @use "sass:color";
 
 .modal {
@@ -25,14 +26,18 @@
   --_modal-content-Color: var(--modal-content-Color, #{fx.getOnColor(white, 800)});
   --_modal-content-Padding: var(--modal-content-Padding, 0.75rem);
   --_modal-content-Border: var(--modal-content-Border, 1px solid #{fx.getColor(gray, 900)});
+  --_modal-content-Width: var(--modal-content-Width, var(--__modal-content-Width, 80%));
 
   background-color: var(--_modal-content-BackgroundColor);
   color: var(--_modal-content-Color);
+  border: var(--_modal-content-Border);
+  width: var(--_modal-content-Width);
   padding: var(--_modal-content-Padding);
   margin: auto;
-  border: var(--_modal-content-Border);
 
-  width: 80%;
+  @media (max-width: size.$breakpoint-xs) {
+    --__modal-content-Width: 95%;
+  }
 }
 
 
@@ -50,9 +55,16 @@
 }
 
 .splide__slide-image {
+  --_splide__slide-image-MaxWidth: var(--splide__slide-image-MaxWidth, var(--__splide__slide-image-MaxWidth, 75%));
+
+  max-width: var(--_splide__slide-image-MaxWidth);
+
   align-self: center;
   display: block;
   max-height: 24rem;
-  max-width: 75%;
   margin: 0 auto;
+
+  @media (max-width: size.$breakpoint-xs) {
+    --__splide__slide-image-MaxWidth: 85%;
+  }
 }
