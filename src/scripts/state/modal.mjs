@@ -17,6 +17,10 @@ document.addEventListener('alpine:init', () => {
                     {
                         id: "splied01-slide01",
                         url: new URL('../../assets/images/ladral-website-cloud.png', import.meta.url),
+                    },
+                    {
+                        id: "splied01-slide02",
+                        url: new URL('../../assets/images/ladral-website-footer.png', import.meta.url),
                     }
                 ]
             },
@@ -25,11 +29,11 @@ document.addEventListener('alpine:init', () => {
                 images: [
                     {
                         id: "splied01-slide01",
-                        url: new URL('../../assets/images/ladral-website-cloud.png', import.meta.url),
+                        url: new URL('../../assets/images/assembly-dashboard.png', import.meta.url),
                     },
                     {
                         id: "splied01-slide02",
-                        url: new URL('../../assets/images/ladral-website-cloud.png', import.meta.url),
+                        url: new URL('../../assets/images/assembly-dashboard-docker-deployment.png', import.meta.url),
                     }
                 ]
             }

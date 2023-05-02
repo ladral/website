@@ -23,7 +23,7 @@
 .modal-content {
   --_modal-content-BackgroundColor: var(--modal-content-BackgroundColor, #{fx.getColor(white, 800)});
   --_modal-content-Color: var(--modal-content-Color, #{fx.getOnColor(white, 800)});
-  --_modal-content-Padding: var(--modal-content-Padding, 0.25rem 1.25rem 1.25rem 1.25rem);
+  --_modal-content-Padding: var(--modal-content-Padding, 0.75rem);
   --_modal-content-Border: var(--modal-content-Border, 1px solid #{fx.getColor(gray, 900)});
 
   background-color: var(--_modal-content-BackgroundColor);
@@ -39,12 +39,20 @@
 /*
   splide - override default styles
 */
-.modal-content__gallery {
+.splide {
+  display: flex;
+  justify-content: center;
   height: 25rem;
 }
 
+.splide__slide {
+  display: flex;
+}
+
 .splide__slide-image {
+  align-self: center;
   display: block;
-  height: 24rem;
+  max-height: 24rem;
+  max-width: 75%;
   margin: 0 auto;
 }
