@@ -137,7 +137,7 @@
                 <div class="timeline__line"></div>
                 <h3 class="timeline__indicator timeline__indicator--motion">2022</h3>
                 <div class="project reveal-motion">
-                    <div class="project__card dral-card" data-cy="project__card--reveal"
+                    <div class="project__card dral-card" data-cy="project__card"
                          @click="setModal('Ladral Website')">
                         <div class="dral-card__preview"
                              style="background-image:url('./assets/images/ladral-website.png')"></div>
@@ -225,6 +225,7 @@
         </div>
     </div>
     <div class="modal"
+         data-cy="modal"
          x-show="state.open"
          x-transition:enter-start="u-opacity-0"
          x-transition:enter-end="u-opacity-1"
@@ -233,7 +234,7 @@
          @click="closeModal()">
         <div class="modal-content" @click.stop>
             <div class="is-flex is-flex-direction-row is-justify-content-end">
-                <div class="close" @click="closeModal()">
+                <div class="close" @click="closeModal()" data-cy="modal-close">
                     <i class="close-icon dral-icon-close-line" @click="closeModal()"></i>
                     <svg class="close-background" xmlns="http://www.w3.org/2000/svg">
                         <circle class="close-background__shape" cx="16" cy="16" r="15"></circle>

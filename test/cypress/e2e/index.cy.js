@@ -75,7 +75,7 @@ describe('When navigate to index page', () => {
     context('project card', () => {
         it('should not be visible on page load', () => {
             // arrange
-            const projectCards = cy.get('[data-cy="project__card--reveal"]');
+            const projectCards = cy.get('[data-cy="project__card"]');
 
             // act
             cy.scrollTo(0, 0); // cypress automatically scrolls to element after selecting it -> scroll back to top of page
@@ -89,11 +89,21 @@ describe('When navigate to index page', () => {
         });
 
         it('should be visible after scrolling down', () => {
-            cy.get('[data-cy="project__card--reveal"]').each(item => {
+            cy.get('[data-cy="project__card"]').each(item => {
                 cy.wrap(item)
                     .scrollIntoView()
                     .should('be.visible');
             });
+        });
+    });
+
+    context("modal", () => {
+        it('should not be visible', () => {
+            cy.get('[data-cy="modal"]')
+                .each((item, index) => {
+                    cy.wrap(item)
+                        .should('not.be.visible');
+                });
         });
     });
 })
