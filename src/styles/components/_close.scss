@@ -1,0 +1,39 @@
+@use "../abstracts/functions" as fx;
+
+.close {
+  --_close-Color: var(--close-color, #{fx.getColor(grey, 800)});
+  --_close-FontSize: var(--close-FontSize, 2rem);
+
+  position: relative;
+  cursor: pointer;
+
+  &-icon {
+    font-size: var(--_close-FontSize);
+    color: var(--_close-Color);
+  }
+
+  &-background {
+    filter: fx.getToken(drop-shadow-filter);
+    height: var(--_close-FontSize);
+    width: var(--_close-FontSize);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    & circle {
+      stroke: fx.getColor(primary, 800);
+      stroke-width: 0;
+      stroke-dasharray: 0 110;
+      stroke-dashoffset: -20;
+      fill: transparent;
+      transition: #{fx.getToken(transition-slow)};
+      transition-property: stroke-width, stroke-dashoffset, stroke-dasharray;
+    }
+
+    &:hover circle {
+      stroke-width: 1.5px;
+      stroke-dashoffset: 0;
+      stroke-dasharray: 110;
+    }
+  }
+}

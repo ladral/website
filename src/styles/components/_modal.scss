@@ -1,0 +1,70 @@
+@use "../abstracts/functions" as fx;
+@use "../abstracts/size" as size;
+@use "sass:color";
+
+.modal {
+  --_modal-ZIndex: var(--modal-ZIndex, 10);
+  --_modal-Display: var(--modal-Display, flex);
+  --_modal-BackgroundColor: var(--modal-BackgroundColor, #{rgba(fx.map-get-color-strict(grey, 800, 'light'), 0.9)});
+
+  z-index: var(--_modal-ZIndex);
+  display: var(--_modal-Display);
+  background-color: var(--_modal-BackgroundColor);
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  transition: #{fx.getToken(transition)};
+  transition-property: opacity;
+}
+
+.modal-content {
+  --_modal-content-BackgroundColor: var(--modal-content-BackgroundColor, #{fx.getColor(white, 800)});
+  --_modal-content-Color: var(--modal-content-Color, #{fx.getOnColor(white, 800)});
+  --_modal-content-Padding: var(--modal-content-Padding, 0.75rem);
+  --_modal-content-Border: var(--modal-content-Border, 1px solid #{fx.getColor(gray, 900)});
+  --_modal-content-Width: var(--modal-content-Width, var(--__modal-content-Width, 80%));
+
+  background-color: var(--_modal-content-BackgroundColor);
+  color: var(--_modal-content-Color);
+  border: var(--_modal-content-Border);
+  width: var(--_modal-content-Width);
+  padding: var(--_modal-content-Padding);
+  margin: auto;
+
+  @media (max-width: size.$breakpoint-xs) {
+    --__modal-content-Width: 95%;
+  }
+}
+
+
+/*
+  splide - override default styles
+*/
+.splide {
+  display: flex;
+  justify-content: center;
+  height: 25rem;
+}
+
+.splide__slide {
+  display: flex;
+}
+
+.splide__slide-image {
+  --_splide__slide-image-MaxWidth: var(--splide__slide-image-MaxWidth, var(--__splide__slide-image-MaxWidth, 75%));
+
+  max-width: var(--_splide__slide-image-MaxWidth);
+
+  align-self: center;
+  display: block;
+  max-height: 24rem;
+  margin: 0 auto;
+
+  @media (max-width: size.$breakpoint-xs) {
+    --__splide__slide-image-MaxWidth: 85%;
+  }
+}

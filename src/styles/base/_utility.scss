@@ -49,6 +49,18 @@
   white-space: nowrap;
 }
 
+.u-no-scroll {
+  overflow: hidden;
+}
+
+.u-opacity-0 {
+  opacity: 0;
+}
+
+.u-opacity-1 {
+  opacity: 1;
+}
+
 @supports (-webkit-line-clamp: 1) {
   .u-text-truncate-multiline {
     display: -webkit-box;

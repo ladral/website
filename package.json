@@ -13,12 +13,14 @@
     "@parcel/packager-raw-url": "^2.8.3",
     "@parcel/transformer-sass": "^2.8.3",
     "@parcel/transformer-webmanifest": "^2.8.3",
+    "@splidejs/splide": "^4.1.4",
+    "alpinejs": "^3.11.1",
     "motion": "^10.15.5",
     "parcel": "^2.8.3",
     "rimraf": "^4.1.2"
   },
   "devDependencies": {
-    "cypress": "^12.6.0",
+    "cypress": "^12.11.0",
     "http-server": "^14.1.1"
   }
 }
