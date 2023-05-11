@@ -14,10 +14,10 @@
     "@parcel/transformer-sass": "^2.8.3",
     "@parcel/transformer-webmanifest": "^2.8.3",
     "@splidejs/splide": "^4.1.4",
-    "alpinejs": "^3.11.1",
+    "alpinejs": "^3.12.1",
     "motion": "^10.15.5",
     "parcel": "^2.8.3",
-    "rimraf": "^4.1.2"
+    "rimraf": "^5.0.0"
   },
   "devDependencies": {
     "cypress": "^12.11.0",
