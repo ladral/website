@@ -29,3 +29,7 @@ textarea{
   background-color: var(--dral-bg-color);
   color: var(--dral-on-bg-color);
 }
+
+/* alpine.js specific */
+// see -> https://alpinejs.dev/directives/cloak
+[x-cloak] { display: none !important; }
