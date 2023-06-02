@@ -1,8 +1,18 @@
-import {scroll} from "motion"
+import {animate, scroll} from "motion"
 import {registerRevealMotion} from "./reveal.motion.mjs";
 import {registerTimelineMotion, registerFadeInAnimation} from "./timeline.motion.mjs";
 import {registerBounceAnimation} from "./scroll.motion.mjs";
 import {registerHeadlineMotion} from "./headline.motion.mjs";
+
+/* header */
+const header = document.querySelector(".header");
+
+scroll(animate(header, {y: [header.offsetHeight * -1, 0]}), {
+            target: document.querySelector(".illustration__project-logo"),
+            offset: ["start start", "end start"]
+        }
+    )
+
 
 /* scroll hint animation */
 const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
