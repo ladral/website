@@ -21,7 +21,7 @@
     left: 0;
 
     & circle {
-      stroke: fx.getColor(primary, 800);
+      stroke: fx.getPrimaryColor();
       stroke-width: 0;
       stroke-dasharray: 0 110;
       stroke-dashoffset: -20;
