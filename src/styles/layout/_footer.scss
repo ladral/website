@@ -44,16 +44,19 @@
   --icon-Height: 1em;
   --icon-Width: 1em;
 
-  color: fx.getOnColor(grey, 900);
-  border-radius: var(--_footer__link-BorderRadius);
-  text-decoration: none;
   display: block;
+  text-decoration: none;
+  color: fx.getPrimaryColor();
+  border-radius: var(--_footer__link-BorderRadius);
+  transition: #{fx.getToken(transition)}, #{fx.getToken(transition-super-slow)};
+  transition-property: box-shadow, color;
 
-  transition: #{fx.getToken(transition)};
-  transition-property: box-shadow;
+  & i {
+    color: fx.getOnColor(grey, 900);
+  }
 
   &:hover {
-    box-shadow: var(--_footer__link-BoxShadow);
+   box-shadow: var(--_footer__link-BoxShadow);
   }
 
   &:focus {

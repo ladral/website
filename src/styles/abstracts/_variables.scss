@@ -57,9 +57,11 @@ $TOKEN-MAP: (
                 0 2px 3px map-get($COLOR-MAPS, grey, 900, light),
                 0 8px 8px map-get($COLOR-MAPS, grey, 900, light)
         ),
-        ring-shadow: 0px 0px 25px 0px map-get($COLOR-MAPS, primary, 800, light),
-        transition: ease-in-out 0.3s,
+        ring-shadow: 0px 0px 25px 0px,
+        transition: 0.3s,
         transition-slow: 0.5s,
+        transition-super-slow: ease-in-out 4s,
+        transition-timing-function: ease-in-out,
         drop-shadow-filter: drop-shadow(1px 1px 1.5px rgb(0 0 0 / 0.4)),
   /*
     outlines

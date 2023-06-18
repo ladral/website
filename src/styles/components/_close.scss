@@ -26,8 +26,9 @@
       stroke-dasharray: 0 110;
       stroke-dashoffset: -20;
       fill: transparent;
-      transition: #{fx.getToken(transition-slow)};
-      transition-property: stroke-width, stroke-dashoffset, stroke-dasharray;
+
+      transition: #{fx.getToken(transition)}, #{fx.getToken(transition)}, #{fx.getToken(transition)}, #{fx.getToken(transition-super-slow)};
+      transition-property: stroke-width, stroke-dashoffset, stroke-dasharray, stroke;
     }
 
     &:hover circle {
