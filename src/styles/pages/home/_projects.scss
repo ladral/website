@@ -22,7 +22,9 @@
   height: 100%;
   width: var(--_timeline__line-Width);
   margin-left: calc(1rem - calc(var(--_timeline__line-Width) / 2));
-  background-color: fx.getColor(primary, 800);
+  background-color: fx.getPrimaryColor();
+  transition: #{fx.getToken(transition-super-slow)};
+  transition-property: background-color;
 }
 
 .timeline__indicator {
@@ -38,7 +40,9 @@
     height: var(--_timeline__indicator-Diameter);
     margin-right: 0.75rem;
     border-radius: var(--_timeline__indicator-Diameter);
-    background-color: fx.getColor(primary, 800);
+    background-color: fx.getPrimaryColor();
+    transition: #{fx.getToken(transition-super-slow)};
+    transition-property: background-color;
   }
 }
 

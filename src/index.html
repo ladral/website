@@ -150,7 +150,7 @@
                                 <stop offset="100%" stop-color="var(--dral-bg-color)"/>
                             </linearGradient>
                         </defs>
-                        <path transform="matrix(2.5268166065216064, 0, 0, 2.049612045288086, 32.66732517591083, 83.46468946388632)"
+                        <path id="transition_dral" transform="matrix(2.5268166065216064, 0, 0, 2.049612045288086, 32.66732517591083, 83.46468946388632)"
                               fill="none" stroke="url(#projects__timeline-start-icon__stroke-definition)"
                               stroke-width="12"
                               data-type="polygon"
@@ -275,10 +275,7 @@
                     <ul class="splide__list">
                         <template x-for="image in state.images">
                         <li class="splide__slide" :id="image.id" role="tabpanel" aria-roledescription="slide" aria-label="1 of 2" style="width: calc(100%);" aria-hidden="true">
-                            <img x-bind:src="image.url" class="splide__slide-image"/>
-                        </li>
-                        <li class="splide__slide" :id="image.id" role="tabpanel" aria-roledescription="slide" aria-label="1 of 2" style="width: calc(100%);" aria-hidden="true">
-                            <img x-bind:src="image.url" class="splide__slide-image"/>
+                            <img x-bind:src="image.url" class="splide__slide-image" alt="project insights"/>
                         </li>
                         </template>
                     </ul>

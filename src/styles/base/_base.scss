@@ -12,6 +12,11 @@
   --dral-transparent: rgba(55, 65, 81, 0.6);
 }
 
+
+stop {
+  transition: #{fx.getToken(transition-super-slow)};
+}
+
 html,
 body {
   height: 100%;

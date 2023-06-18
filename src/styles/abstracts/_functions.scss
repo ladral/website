@@ -1,6 +1,11 @@
 @use "sass:map";
 @use "./variables" as var;
 
+/* @return var(--color-primary, rgb(242, 2, 242)); */
+@function getPrimaryColor() {
+  $color: var(--color-primary, #{map-get-color-strict(primary, 800, 'light')});
+  @return $color;
+}
 
 /* @return var(--color-grey-800, rgb(17, 24, 39); */
 @function getColor($name: grey, $step: 800) {

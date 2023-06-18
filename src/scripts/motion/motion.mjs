@@ -11,8 +11,22 @@ scroll(animate(header, {y: [header.offsetHeight * -1, 0]}), {
             target: document.querySelector(".illustration__project-logo"),
             offset: ["start start", "end start"]
         }
-    )
+    );
 
+/* animate theme */
+let isPrimaryTheme = false;
+let animateTheme = () => {
+    let root = document.querySelector(':root');
+    if (isPrimaryTheme) {
+        root.style.setProperty('--color-primary', 'var(--color-secondary-800)')
+        isPrimaryTheme = false;
+    } else {
+        root.style.setProperty('--color-primary', 'var(--color-primary-800)')
+        isPrimaryTheme = true;
+    }
+};
+window.setInterval(animateTheme, 10000);
+animateTheme();
 
 /* scroll hint animation */
 const scrollHintArrows = document.querySelectorAll(".illustration__scroll-hint-arrow--motion");
