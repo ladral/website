@@ -4,6 +4,8 @@
   --_header-ZIndex: var(--header-ZIndex, 10);
   --_header-Padding: var(--footer-Padding, 1rem 0);
 
+  opacity: 0;
+
   z-index: var(--_header-ZIndex);
   padding: var(--_header-Padding);
   position: fixed;

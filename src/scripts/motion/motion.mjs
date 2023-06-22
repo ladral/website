@@ -7,6 +7,7 @@ import {registerHeadlineMotion} from "./headline.motion.mjs";
 /* header */
 const header = document.querySelector(".header");
 
+header.style.opacity = 1;
 scroll(animate(header, {y: [header.offsetHeight * -1, 0]}), {
             target: document.querySelector(".illustration__project-logo"),
             offset: ["start start", "end start"]
