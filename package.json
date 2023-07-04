@@ -1,6 +1,6 @@
 {
   "name": "ladral-website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Ladral Website",
   "scripts": {
     "dev": "rimraf dist && parcel src/index.html",
@@ -10,17 +10,17 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
-    "@parcel/packager-raw-url": "^2.9.1",
-    "@parcel/transformer-sass": "^2.9.1",
-    "@parcel/transformer-webmanifest": "^2.9.1",
+    "@parcel/packager-raw-url": "^2.9.3",
+    "@parcel/transformer-sass": "^2.9.3",
+    "@parcel/transformer-webmanifest": "^2.9.3",
     "@splidejs/splide": "^4.1.4",
-    "alpinejs": "^3.12.1",
+    "alpinejs": "^3.12.3",
     "motion": "^10.16.2",
-    "parcel": "^2.9.1",
+    "parcel": "^2.9.3",
     "rimraf": "^5.0.1"
   },
   "devDependencies": {
-    "cypress": "^12.13.0",
+    "cypress": "^12.16.0",
     "http-server": "^14.1.1"
   }
 }
