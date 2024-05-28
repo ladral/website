@@ -10,17 +10,17 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
-    "@parcel/packager-raw-url": "^2.11.0",
-    "@parcel/transformer-sass": "^2.11.0",
-    "@parcel/transformer-webmanifest": "^2.11.0",
+    "@parcel/packager-raw-url": "^2.12.0",
+    "@parcel/transformer-sass": "^2.12.0",
+    "@parcel/transformer-webmanifest": "^2.12.0",
     "@splidejs/splide": "^4.1.4",
-    "alpinejs": "^3.13.5",
+    "alpinejs": "^3.14.0",
     "motion": "^10.17.0",
-    "parcel": "^2.11.0",
-    "rimraf": "^5.0.5"
+    "parcel": "^2.12.0",
+    "rimraf": "^5.0.7"
   },
   "devDependencies": {
-    "cypress": "^13.6.4",
+    "cypress": "^13.10.0",
     "http-server": "^14.1.1"
   }
 }
