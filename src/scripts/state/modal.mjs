@@ -36,6 +36,23 @@ document.addEventListener('alpine:init', () => {
                         url: new URL('../../assets/images/assembly-dashboard-docker-deployment.png', import.meta.url),
                     }
                 ]
+            },
+            {
+                title: 'Cunfin',
+                images: [
+                    {
+                        id: "splied01-slide01",
+                        url: new URL('../../assets/images/cunfin.png', import.meta.url),
+                    },
+                    {
+                        id: "splied01-slide01",
+                        url: new URL('../../assets/images/cunfin-kreya.png', import.meta.url),
+                    },
+                    {
+                        id: "splied01-slide03",
+                        url: new URL('../../assets/images/assembly-dashboard-docker-deployment-with-cunfin.png', import.meta.url),
+                    }
+                ]
             }
         ],
 
